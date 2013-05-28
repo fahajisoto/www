@@ -117,7 +117,7 @@ th {
 }
 td, th { 
 
-  border: 5px solid black; 
+  border: 5px solid #abc; 
   text-align: center; 
 }
 
