@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0,user-scalable=yes" />
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+		<title>Annuaire - Rechercher une personne</title>
+		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
+		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" /> 
+		<script src="../common/js/jquery-1.9.1.min.js"> </script>
+		<script type="text/javascript" src="../common/js/jquery.json.js"></script>
+		<script type="text/javascript">
+			$(document).bind('mobileinit', function(){
+				$.mobile.page.prototype.options.addBackBtn = true;
+				$.mobile.allowCrossDomainPages = true;
+			});
+		</script>
+		<script src="../common/js/jquery.mobile-1.3.0.js"></script>
+		<script src="js/initannuaire.js"></script>
+		
+	</head>
+	<body>
+
+		<div data-role="header" class="classHeader">
+			<div data-role="navbar">
+				<ul>
+					<li><a data-role="button" href="../main.html" data-transition="slide"  data-ajax="false"><img src="../icons/home.png" ></a>  </li>
+				</ul>
+			</div>
+		</div>	
+		<div data-role="content" theme="a">
+			<h1>Rechercher un contact</h1>
+
+			Nom du contact :
+			<div>
+				<input type="text" name="name" id="name"/>
+				<a data-role="button" name="search" data-transition="slide" onclick="initannuaire()">search</a>
+			</div>
+			<ul id="listAnnu"  data-role="listview" data-autodividers="true" data-inset="true"></ul>
+		</div>
+	</body>
+</html>
