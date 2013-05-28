@@ -52,7 +52,6 @@ body.loading .Loading {
 	align: center;
 	display: inline-block;
     margins: 0px !important;
-   
     padding-right:15%;
     height: 100%;
 
@@ -64,7 +63,7 @@ body.loading .Loading {
 	margins: 0px;
 	padding: 0px;
 	text-align: center;
-	height: 20% !important;
+	height: 40% !important;
 	width: 100% !important;
 
 }
