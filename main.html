@@ -22,17 +22,19 @@
 			<div data-role="header" data-position="fixed">
 				<h4>UdAMobile</h4>
 			</div>
-			<div id="maintable"  class="ui-content">	
-
-					<a  data-role="navbar" onclick="window.location='emploi/emploi_temps.html';" id="emploi_du_temps" rel="external"  data-transition="slide">
+			<div id="maintable" class="ui-content">	
+				<div  data-role="navbar">
+					<a  onclick="window.location='emploi/emploi_temps.html';" id="emploi_du_temps" rel="external"  data-transition="slide">
 						<img src="icons/emploi.png"  /> 
 						<!-- <span>emploi de temps</span>  -->
 					</a>	
-					<a  data-role="navbar" onclick="window.location='transport/transport.html';" data-transition="slide" data-ajax="false">
+					<a  onclick="window.location='transport/transport.html';" data-transition="slide" data-ajax="false">
 						<img src="icons/transport.gif"  /> 
 						<!-- <span>transport</span> -->
 					</a>
-					<a  data-role="navbar" onclick="window.location='restaurant/restaurant.html';" data-transition="slide" data-ajax="false">
+				</div>
+				<div  data-role="navbar">
+					<a  onclick="window.location='restaurant/restaurant.html';" data-transition="slide" data-ajax="false">
 						<img src="icons/Restaurant.png"/> 
 						<!-- <span>Restaurants</span> -->
 					</a>
@@ -41,20 +43,23 @@
 						<span>branches</span> 
 					</a>-->	
 							
-					<a data-role="navbar" onclick="window.location='http://udamobile.u-clermont1.fr/RSS/';'" data-transition="slide" data-rel="external" data-ajax="false" >
+					<a onclick="window.location='http://udamobile.u-clermont1.fr/RSS/';'" data-transition="slide" data-rel="external" data-ajax="false" >
 						<img src="icons/actu.jpg"  /> 
 						<!-- <span>Actualités</span> -->
 					</a>
-					<a data-role="navbar" onclick="window.location='map/map.html';" data-transition="slide" data-ajax="false">
+						</div>
+				<div  data-role="navbar">
+					<a onclick="window.location='map/map.html';" data-transition="slide" data-ajax="false">
 						<img src="icons/map.gif"  /> 
 						<!-- <span>Map</span> -->
 					</a>
 			
-					<a data-role="navbar" onclick="window.location='annuaire/annuaire.html';" data-transition="slide" data-ajax="false" >
+					<a  onclick="window.location='annuaire/annuaire.html';" data-transition="slide" data-ajax="false" >
 						<img src="icons/annu.png" /> 
 						<!-- <span>Annuaire</span> -->
 					</a>
-
+	</div>
+			
 					<!--  <a href="tel:+33607439323"data-transition="slide" data-rel="external" data-ajax="false">
 						<img src="icons/tel.png" width=200 height=200 /> 
 						 <span>call Fa</span> 
