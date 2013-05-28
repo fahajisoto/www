@@ -28,7 +28,7 @@ function makelist(json){
 			var listelement = makelist.exact;			
 			for(i=0;i<n;i++)
 			{
-				html+= "<li class=\"ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"c\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\" ><h3>"+listelement[i].nom+" "+listelement[i].prenom+"</h3><p>Courriel: <a href='mailto:"+listelement[i].mail+"'>"+listelement[i].mail+"";
+				html+= "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\" ><h3>"+listelement[i].nom+" "+listelement[i].prenom+"</h3><p>Courriel: <a href='mailto:"+listelement[i].mail+"'>"+listelement[i].mail+"";
 				if(listelement[i].tel)
 				{
 					html+="<p class='tel'>TEL:<a  href='tel:"+listelement[i].tel+"'>"+listelement[i].tel+"</a></p>";

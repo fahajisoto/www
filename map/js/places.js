@@ -154,7 +154,7 @@ function listbuildings(list){
 	}
 	
 	for(var i in places){
-		 html += "<li class=\"ui-btn ui-btn-up-c ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" onclick=\"showPosition(" + places[i][0]+ ","+ places[i][1] + ")\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"c\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\" onclick=\"showPosition(" + places[i][0]+ ","+ places[i][1] + ")\">"+ i +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
+		 html += "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" onclick=\"showPosition(" + places[i][0]+ ","+ places[i][1] + ")\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\" onclick=\"showPosition(" + places[i][0]+ ","+ places[i][1] + ")\">"+ i +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
 	}
 	$('#newlist').html(html);
 	$('#listbuildings').hide();
