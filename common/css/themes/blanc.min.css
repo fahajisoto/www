@@ -33,7 +33,12 @@ body.loading .Loading {
     display: block;
 }
 
-
+#uda_header{
+	height:10% !important;
+	margin: auto ;
+    text-align: center;
+	
+}
 #page_footer {
 	height:10% !important;
 	margin: auto ;
