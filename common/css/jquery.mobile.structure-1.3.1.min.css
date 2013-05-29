@@ -1851,7 +1851,7 @@ scale
 
 .ui-btn-inner {
 	font-size: 16px;
-	padding: .6em 20px;
+	padding: .5em 15px;
 	min-width: .75em;
 	display: block;
 	position: relative;
@@ -3344,7 +3344,7 @@ ol.ui-listview .ui-li-jsnumbering:before {
 }
 
 .ui-li .ui-btn-inner a.ui-link-inherit,.ui-li-static.ui-li {
-	padding: .7em 15px;
+	padding: .7em 10px;
 	display: block
 }
 

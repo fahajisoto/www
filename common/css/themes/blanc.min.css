@@ -647,7 +647,7 @@ td,th {
 	padding-bottom:20%;
 	position:absolute;
 	width:100%;
-	height:70%;
+	height:75%;
 	overflow:hidden;
 	display:block;
 	margin-top: 0em;
@@ -656,4 +656,10 @@ td,th {
 	
 	background: #bbb;
 	text-color: #000;
+}
+
+#listAnnu{
+	background: transparent !important;
+	text-color: #fafafa;
+	
 }
