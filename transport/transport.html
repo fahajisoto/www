@@ -19,21 +19,22 @@
 		</script>
 	</head> 
 	<body> 
-		<div data-role="page" id="t2c">
-		<div data-role="header" class="classHeader">
+		<div data-role="page">
+		
+		<div data-role="header" id="uda_header">
 			<div data-role="navbar">
 				<ul>
-					<li><a data-role="button"  onclick="window.location='../main.html';" data-shadow="true" data-ajax="false"><img src="../icons/home.png" ></a>  </li>
+					<li><a data-role="button"  onclick="window.location='../main.html';" data-ajax="false"><img src="../icons/home.png" ></a>  </li>
 					<li><h2>T2C</h2></li>
-					<li><a data-role="button"  onclick="window.location='../main.html';" data-shadow="true" data-ajax="false"><img src="../icons/back_button.png" ></a>	</li>
+					<li><a data-role="button"  onclick="window.location='../main.html';" data-ajax="false"><img src="../icons/back_button.png" ></a>	</li>
 				</ul>
 				
 			</div>
 		</div>	
-			<div data-role="content">	
+			<div data-role="content"  id="mainPage">	
 				<a data-role="button" onclick="window.location='#A';"  data-transition="slide" data-shadow="true" data-ajax="false">ligne A</a>
 			</div>
-			<div data-role="footer" data-position="fixed">
+			<div id="page_footer" data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
 						<li><a  onclick="window.location='../main.html';" data-rel="dialog" data-icon="alert" data-iconpos="top" data-shadow="true"  data-ajax="false">back</a></li>

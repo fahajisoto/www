@@ -1590,7 +1590,8 @@ scale
 }
 }
 .ui-grid-a,.ui-grid-b,.ui-grid-c,.ui-grid-d {
-	overflow: hidden
+	overflow: hidden;
+	height:10%
 }
 
 .ui-block-a,.ui-block-b,.ui-block-c,.ui-block-d,.ui-block-e {
@@ -1901,7 +1902,6 @@ scale
 
 .ui-btn-icon-notext .ui-btn-inner {
 	padding: 0;
-	height: 100%
 }
 
 .ui-btn-icon-notext .ui-btn-inner .ui-icon {
@@ -2044,7 +2044,7 @@ div.ui-btn-text {
 	height: 100%;
 	-webkit-appearance: none;
 	cursor: pointer;
-	background: #fff;
+	background: #000;
 	background: rgba(255, 255, 255, 0);
 	filter: Alpha(Opacity = 0);
 	opacity: .1;
@@ -2483,8 +2483,7 @@ label.ui-submit {
 }
 
 .ui-popup-screen {
-	background-image:
-		url(data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==);
+	background-image:url(data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==);
 	top: 0;
 	left: 0;
 	right: 0;
@@ -2968,6 +2967,7 @@ div.ui-input-text input.ui-input-text,div.ui-input-text textarea.ui-input-text,.
 	margin: 0;
 	display: block;
 	background: transparent none;
+	color:#fff;
 	outline: 0 !important
 }
 
@@ -3826,8 +3826,8 @@ div.ui-slider-switch.ui-mini {
 
 .table-stripe tbody tr:nth-child(odd) td,.table-stripe tbody tr:nth-child(odd) th
 	{
-	background-color: #eee;
-	background-color: rgba(0, 0, 0, .04)
+	background-color: #000;
+
 }
 
 .table-stripe thead th,.table-stripe tbody tr:last-child {
