@@ -567,7 +567,7 @@ body.loading .Loading {
 
 #page_footer {
 	background-image: url('images/footer.jpg');
-	background-repeat: no-repeat;
+	background-repeat: repeat-x;
 	height: 10% !important;
 	margin: none;
 	align: center;
