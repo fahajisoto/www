@@ -213,5 +213,6 @@ function showPosition(lat,lon)
 	});	
 	$("#listbuildings").hide();
 	$("#newlist").hide();
+	$("#header2").hide();
 	$("#mapholder").show();
 }

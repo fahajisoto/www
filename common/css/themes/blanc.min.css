@@ -587,7 +587,7 @@ body.loading .Loading {
 
 #maintable {
 	background-color: #000000;
-	margin: 0 !important;
+	margin-top: 0 !important;
 	padding: 0 !important;
 	text-align: center;
 	height: 100% !important;
