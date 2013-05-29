@@ -1,6 +1,11 @@
 var html="";
 var a=3;
 
+function pagelayout(a){
+	if(a==3)
+	$('#mapholder').hide();
+	$('#newlist').hide();
+}
 function listbuildings(list){
 	$('#listbuildings').hide();
 	$('#newlist').show();

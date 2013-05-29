@@ -3208,7 +3208,7 @@ ol.ui-listview,ol.ui-listview .ui-li-divider {
 }
 
 .ui-listview,.ui-panel-inner>.ui-listview {
-	margin: -15px
+	margin: 0px
 }
 
 .ui-collapsible-content>.ui-listview {
