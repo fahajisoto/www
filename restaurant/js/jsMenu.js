@@ -227,7 +227,6 @@ $(document).on('click','#btnBack', function()
 								$("#btnBack").hide();					
 								$("#itineraire").hide();
 								$("#listebeta").hide();
-								$("#choix1").show();
 								$("#listeAlpha").show();
 							});
 $(document).ready(function() 
