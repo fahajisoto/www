@@ -652,3 +652,8 @@ td,th {
 	display:block;
 	margin-top: 0em;
 }
+#name{
+	
+	background: #bbb;
+	text-color: #000;
+}
