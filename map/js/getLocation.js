@@ -2,7 +2,6 @@ function getLocation() {
 				//window.location='map.html';
 				alert("Loading, please wait...");
 				$('#Loading').show();
-				//$('#mapholder').hide();
 				$("#mapholder").css({ opacity: 0, zoom: 0 });
 				if (navigator.geolocation)
 				{
@@ -26,7 +25,7 @@ function getLocation() {
 					position: address,
 					title: "TEST"
 				});	
-				//$('#mapholder').show();
+				$('#mapholder').show();
 				$('#liste_class').hide();
 				$("#mapholder").css({ opacity: 1, zoom: 1 });
 				$('#Loading').hide();

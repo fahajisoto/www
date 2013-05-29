@@ -167,7 +167,8 @@ function back_to_category(a){
 	if(a==1){
 	$('#listbuildings').show();
 	$('#newlist').hide();
-	$('#mapholder').hide();	
+	//$('#mapholder').hide();	
+	$("#mapholder").css({ opacity: 0, zoom: 0 });
 	$('#backButton').attr('onclick', 'window.location=\'map.html\'\;');
 	}
 
@@ -175,7 +176,8 @@ function back_to_category(a){
 		a=1;
 		$('#newlist').show();
 		$('#listbuildings').hide();
-		$('#mapholder').hide();
+		//$('#mapholder').hide();
+		$("#mapholder").css({ opacity: 0, zoom: 0 });
 		$('#backButton').attr('onclick', 'back_to_category('+a+')');
 	}
 	
@@ -214,5 +216,6 @@ function showPosition(lat,lon)
 	$("#listbuildings").hide();
 	$("#newlist").hide();
 	$("#header2").hide();
-	$("#mapholder").show();
+	//$("#mapholder").show();
+	$("#mapholder").css({ opacity: 1, zoom: 1 });
 }

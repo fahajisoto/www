@@ -49,7 +49,7 @@
 
 .ui-body-a,.ui-overlay-a {
 	border: 1px solid #000;
-	color: #777777;
+	color: #000000;
 	text-shadow: 0 1px 0 #eeeeee;
 	background: #000000;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000),
@@ -536,7 +536,7 @@ a.ui-link-inherit {
 
 html,body {
 	width: 100% !important;
-	height: 99% !important;
+	height: 100% !important;
 	padding: 0;
 	margin: 0;
 }
@@ -640,4 +640,15 @@ td,th {
 	height:100%;
 	width:100%;
 
+}
+
+#mapholder {
+	padding-top:10%;
+	padding-bottom:20%;
+	position:absolute;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	display:block;
+	margin-top: 0em;
 }
