@@ -13,12 +13,12 @@
 	background: #000000;
 	color: #fafafa;
 	font-weight: bold;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000),to(#fafafa));
-	background-image: -webkit-linear-gradient(#fafafa, #000000);
-	background-image: -moz-linear-gradient(#fafafa, #000000);
-	background-image: -ms-linear-gradient(#fafafa, #000000);
-	background-image: -o-linear-gradient(#fafafa, #000000);
-	background-image: linear-gradient(#fafafa, #000000);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),to(#000000));
+	background-image: -webkit-linear-gradient(#000000, #fafafa);
+	background-image: -moz-linear-gradient(#000000, #fafafa);
+	background-image: -ms-linear-gradient(#000000, #fafafa);
+	background-image: -o-linear-gradient(#000000, #fafafa);
+	background-image: linear-gradient(#000000, #fafafa);
 }
 
 .ui-bar-a .ui-link-inherit {
@@ -52,13 +52,13 @@
 	color: #000000;
 	text-shadow: 0 1px 0 #eeeeee;
 	background: #000000;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000),
-		to(#fafafa));
-	background-image: -webkit-linear-gradient(#fafafa, #000000);
-	background-image: -moz-linear-gradient(#fafafa, #000000);
-	background-image: -ms-linear-gradient(#fafafa, #000000);
-	background-image: -o-linear-gradient(#fafafa, #000000);
-	background-image: linear-gradient(#fafafa, #000000);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),
+		to(#000000));
+	background-image: -webkit-linear-gradient(#000000, #fafafa);
+	background-image: -moz-linear-gradient(#000000, #fafafa);
+	background-image: -ms-linear-gradient(#000000, #fafafa);
+	background-image: -o-linear-gradient(#000000, #fafafa);
+	background-image: linear-gradient(#000000, #fafafa);
 }
 
 .ui-overlay-a {
@@ -98,13 +98,13 @@
 	font-weight: bold;
 	color: #2f3e46;
 	text-shadow: 0 1px 0 #000000;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000),
-		to(#fafafa));
-	background-image: -webkit-linear-gradient(#fafafa, #000000);
-	background-image: -moz-linear-gradient(#fafafa, #000000);
-	background-image: -ms-linear-gradient(#fafafa, #000000);
-	background-image: -o-linear-gradient(#fafafa, #000000);
-	background-image: linear-gradient(#fafafa, #000000);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),
+		to(#000000));
+	background-image: -webkit-linear-gradient(#000000, #fafafa);
+	background-image: -moz-linear-gradient(#000000, #fafafa);
+	background-image: -ms-linear-gradient(#000000, #fafafa);
+	background-image: -o-linear-gradient(#000000, #fafafa);
+	background-image: linear-gradient(#000000, #fafafa);
 }
 
 .ui-btn-up-a:visited,.ui-btn-up-a a.ui-link-inherit {
@@ -117,13 +117,13 @@
 	font-weight: bold;
 	color: #fafafa;
 	text-shadow: 0 1px 0 #000000;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000),
-		to(#fafafa));
-	background-image: -webkit-linear-gradient(#fafafa, #000000);
-	background-image: -moz-linear-gradient(#fafafa, #000000);
-	background-image: -ms-linear-gradient(#fafafa, #000000);
-	background-image: -o-linear-gradient(#fafafa, #000000);
-	background-image: linear-gradient(#fafafa, #000000);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),
+		to(#000000));
+	background-image: -webkit-linear-gradient(#000000, #fafafa);
+	background-image: -moz-linear-gradient(#000000, #fafafa);
+	background-image: -ms-linear-gradient(#000000, #fafafa);
+	background-image: -o-linear-gradient(#000000, #fafafa);
+	background-image: linear-gradient(#000000, #fafafa);
 }
 
 .ui-btn-hover-a:visited,.ui-btn-hover-a:hover,.ui-btn-hover-a a.ui-link-inherit
@@ -137,13 +137,13 @@
 	font-weight: bold;
 	color: #2f3e46;
 	text-shadow: 0 1px 0 #000000;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000),
-		to(#fafafa));
-	background-image: -webkit-linear-gradient(#fafafa, #000000);
-	background-image: -moz-linear-gradient(#fafafa, #000000);
-	background-image: -ms-linear-gradient(#fafafa, #000000);
-	background-image: -o-linear-gradient(#fafafa, #000000);
-	background-image: linear-gradient(#fafafa, #000000);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),
+		to(#000000));
+	background-image: -webkit-linear-gradient(#000000, #fafafa);
+	background-image: -moz-linear-gradient(#000000, #fafafa);
+	background-image: -ms-linear-gradient(#000000, #fafafa);
+	background-image: -o-linear-gradient(#000000, #fafafa);
+	background-image: linear-gradient(#000000, #fafafa);
 }
 
 .ui-btn-down-a:visited,.ui-btn-down-a:hover,.ui-btn-down-a a.ui-link-inherit
@@ -169,13 +169,13 @@ a.ui-link-inherit {
 	cursor: pointer;
 	text-shadow: 0 1px 0 #fafafa;
 	text-decoration: none;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),
-		to(#000000));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#000000),
+		to(#fafafa));
 	background-image: -webkit-linear-gradient( #fafafa , #000000);
-	background-image: -moz-linear-gradient(#fafafa, #000000);
-	background-image: -ms-linear-gradient(#fafafa, #000000);
-	background-image: -o-linear-gradient(#fafafa, #000000);
-	background-image: linear-gradient(#fafafa, #000000);
+	background-image: -moz-linear-gradient(#000000, #fafafa);
+	background-image: -ms-linear-gradient(#000000, #fafafa);
+	background-image: -o-linear-gradient(#000000, #fafafa);
+	background-image: linear-gradient(#000000, #fafafa);
 	font-family: Helvetica, Arial, sans-serif;
 }
 
