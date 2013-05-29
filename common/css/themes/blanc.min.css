@@ -636,8 +636,8 @@ td,th {
 }
 
 
-#emploi{
+#iframe-emploi{
 	height:100%;
 	width:100%;
-	border-collapse: collapse;
+
 }
