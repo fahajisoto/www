@@ -549,7 +549,7 @@ body.loading .Loading {
 	background-image: url('images/header.png');
 	background-repeat: no-repeat;
 	height: 10% !important;
-	margin: auto;
+	margin: 0;
 	text-align: center;
 	text-color: #fafafa;
 }
