@@ -35,7 +35,6 @@ function initialize() {
 				
 				alert("Loading, please wait...");
 				$('#Loading').show();
-				
 				$("#mapholder").css({ opacity: 0, zoom: 0 });
 				if (navigator.geolocation)
 				{
