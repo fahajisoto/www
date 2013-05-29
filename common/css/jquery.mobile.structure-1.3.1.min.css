@@ -1599,7 +1599,7 @@ scale
 	padding: 0;
 	border: 0;
 	float: left;
-	min-height: 1px;
+	min-height: 100%;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
@@ -1608,7 +1608,8 @@ scale
 
 .ui-grid-solo .ui-block-a {
 	display: block;
-	float: none
+	float: none;
+	min-height:100%
 }
 
 .ui-grid-a .ui-block-a,.ui-grid-a .ui-block-b {
@@ -1736,7 +1737,8 @@ scale
 }
 
 .ui-navbar {
-	max-width: 100%
+	max-width: 100%;
+	max-height: 100%
 }
 
 .ui-navbar.ui-mini {
@@ -1758,8 +1760,9 @@ scale
 	padding: 0;
 	position: relative;
 	display: block;
-	border: 2;
+	border: 0;
 	max-width: 100%;
+	max-height: 100%;
 	overflow: visible;
 	zoom: 1
 }
@@ -1767,12 +1770,12 @@ scale
 .ui-navbar li .ui-btn {
 	display: block;
 	text-align: center;
-	margin: 0 -1px 0 0;
+	margin: 0 0 0 0;
 	border-right-width: 0
 }
 
 .ui-navbar li .ui-btn-icon-right .ui-icon {
-	right: 6px
+	right: 0
 }
 
 .ui-navbar li:last-child .ui-btn,.ui-navbar .ui-grid-duo .ui-block-b .ui-btn
@@ -1813,8 +1816,9 @@ scale
 }
 
 .ui-navbar li .ui-btn .ui-btn-inner {
-	padding-top: .7em;
-	padding-bottom: .8em
+	padding-top: .9em;
+	padding-bottom: .9em;
+	min-height:100%
 }
 
 .ui-navbar li .ui-btn-icon-top .ui-btn-inner {
