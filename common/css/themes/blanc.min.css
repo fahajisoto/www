@@ -22,7 +22,7 @@
 }
 
 .ui-bar-a .ui-link-inherit {
-	color: #000000;
+	color: #ffffff;
 }
 
 .ui-bar-a a.ui-link {
@@ -108,7 +108,7 @@
 }
 
 .ui-btn-up-a:visited,.ui-btn-up-a a.ui-link-inherit {
-	color: #2f3e46;
+	color: #fafafa;
 }
 
 .ui-btn-hover-a {
@@ -162,20 +162,20 @@ a.ui-link-inherit {
 }
 
 .ui-btn-active {
-	border: 1px solid #2373a5;
-	background: #387bbe;
+	border: 1px solid #fafaff;
+	background: #fafafa;
 	font-weight: bold;
 	color: #000000;
 	cursor: pointer;
-	text-shadow: 0 1px 0 #3373a5;
+	text-shadow: 0 1px 0 #fafafa;
 	text-decoration: none;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#5393c5),
-		to(#6facd5));
-	background-image: -webkit-linear-gradient(#5393c5, #6facd5);
-	background-image: -moz-linear-gradient(#5393c5, #6facd5);
-	background-image: -ms-linear-gradient(#5393c5, #6facd5);
-	background-image: -o-linear-gradient(#5393c5, #6facd5);
-	background-image: linear-gradient(#5393c5, #6facd5);
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),
+		to(#000000));
+	background-image: -webkit-linear-gradient( #fafafa , #000000);
+	background-image: -moz-linear-gradient(#fafafa, #000000);
+	background-image: -ms-linear-gradient(#fafafa, #000000);
+	background-image: -o-linear-gradient(#fafafa, #000000);
+	background-image: linear-gradient(#fafafa, #000000);
 	font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -426,7 +426,7 @@ a.ui-link-inherit {
 }
 
 .ui-checkbox-on .ui-icon,.ui-radio-on .ui-icon {
-	background-color: #387bbe;
+	background-color: #fafafa;
 }
 
 .ui-icon-loading {
@@ -491,16 +491,16 @@ a.ui-link-inherit {
 	z-index: 1;
 }
 
-.ui-focus,.ui-btn:focus {
-	-moz-box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
-	-webkit-box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
-	box-shadow: inset 0 0 3px #387bbe, 0 0 9px #387bbe;
+.ui-focus,.fafafa:focus {
+	-moz-box-shadow: inset 0 0 3px #fafafa, 0 0 9px #fafafa;
+	-webkit-box-shadow: inset 0 0 3px #fafafa, 0 0 9px #fafafa;
+	box-shadow: inset 0 0 3px #fafafa, 0 0 9px #fafafa;
 }
 
 .ui-input-text.ui-focus,.ui-input-search.ui-focus {
-	-moz-box-shadow: 0 0 12px #387bbe;
-	-webkit-box-shadow: 0 0 12px #387bbe;
-	box-shadow: 0 0 12px #387bbe;
+	-moz-box-shadow: 0 0 12px #fafafa;
+	-webkit-box-shadow: 0 0 12px #fafafa;
+	box-shadow: 0 0 12px #fafafa;
 }
 
 .ui-mobile-nosupport-boxshadow * {
@@ -566,6 +566,8 @@ body.loading .Loading {
 }
 
 #page_footer {
+	background-image: url('images/footer.jpg');
+	background-repeat: no-repeat;
 	height: 10% !important;
 	margin: none;
 	align: center;
@@ -609,7 +611,7 @@ body.loading .Loading {
 }
 
 .ui-block-a {
-	background: #000000;
+
 	font-weight: bold;
 	text-align: center;
 }
@@ -635,17 +637,14 @@ table {
 	border-collapse: collapse;
 }
 
-tr:nth-of-type(odd) {
-	background: #000000;
-}
 
 th {
-	background: #000000;
-	color: #000000;
+
 	font-weight: bold;
 }
 
 td,th {
 	border: 5px solid #abc;
 	text-align: center;
+	background: transparent;
 }
