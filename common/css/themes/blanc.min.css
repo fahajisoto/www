@@ -663,3 +663,8 @@ td,th {
 	text-color: #fafafa;
 	
 }
+
+.udamob_contact_a:active, .udamob_contact_a:visited, .udamob_contact_a:link, .udamob_contact_a:hover {
+	color: #bbb;
+	text-decoration: none;	
+} 
