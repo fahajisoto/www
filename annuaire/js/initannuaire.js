@@ -28,8 +28,8 @@ function makelist(json){
 			var listelement = makelist.exact;			
 			for(i=0;i<n;i++)
 			{
-				html+= "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-wrapperels=\"div\" data-theme=\"a\">"
-						+ "<div class=\"ui-btn-inner ui-li\">"
+				html+= "<li class=\"annuaire\" data-corners=\"false\" data-wrapperels=\"div\" >"
+						+ "<div class=\"ui-btn-inner ui-li\" >"
 						+ "<div class=\"ui-btn-text\">" 
 						+ "<h3>"
 						+ listelement[i].nom 

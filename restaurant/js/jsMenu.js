@@ -106,7 +106,7 @@ function btnhide(){
 }
 //fonction qui met en place la liste des resto
 function makeList(json) {
-	
+	html="";
 	jsonResto = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);
 	if(jsonResto.code_retour == "ok") {
 		nbelt=jsonResto.count;
@@ -224,9 +224,9 @@ $(document).on('click','#btnBack', function()
 							{ 
 								initMenuAlpha();
 								$("#btnBack").hide();					
-								$("#itineraire").hide();
-								$("#listebeta").hide();
+								$("#itineraire").hide();		
 								$("#listeAlpha").show();
+								$('#listebeta').hide();
 							});
 $(document).ready(function() 
 {
