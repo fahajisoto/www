@@ -39,36 +39,35 @@
 			<a id="btnBack" data-role="button" data-transition="slide" data-ajax="false">Les resto</a>
 		</div>
 		<div data-role="content">
-		 <div data-role="fieldcontain">
-			<form>
-				<fieldset data-role="controlgroup">
-					<legend>mode d'affichage</legend>
-					<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
-					<label for="checkbox-2">afficher tous les restaurants</label>
-				</fieldset>
-			</form>	
-		</div>
-				<ul id="listeAlpha" data-role="listview"></ul>
-				<ul id="listebeta"  data-role="listview" data-inset="true">
-				<li></li>
-				</ul>
-				<a id="itineraire" onclick="window.location='../../www/map/itineraire.html';" >Itinéraire</a>
-		</div>
-		<div id="itineraire">
-		
-			<div>
-				<select id="mode" onchange="calcRoute();">
-				  <option value="DRIVING">Voiture</option>
-				  <option value="WALKING">Marche</option>
-				  <option value="BICYCLING">Velo</option>
-				</select>
-			</div>
-		    <div id="mapholder">carte</div>
-		    <div id="EmplacementItineraireTexte">text</div>
+			<div id="page_layout" data-role="content">
+				<div><select id="mode d'affichage" onchange="initialize()">
+					<option value="tous">afficher tous les restaurants</option>
+					<option value="un">choisire un restaurant</option>
+					</select>
+				</div>
+				
+				 	<img src="../icons/loading.gif"/>
+				</div>
 					
-		</div>
-		<small>Source : CROUS Clermont-Ferrand</small>
+						<ul id="listeAlpha" data-role="listview"></ul>
+						<ul id="listebeta"  data-role="listview" data-inset="true">
+						<li></li>
+						</ul>
+						<a id="itineraire" onclick="window.location='../../www/map/itineraire.html';" >Itinéraire</a>
+			</div>
+			<div id="itineraire">	
+				<div>
+					<select id="mode" onchange="calcRoute();">
+					  <option value="DRIVING">Voiture</option>
+					  <option value="WALKING">Marche</option>
+					</select>
+				</div>
+			    <div id="mapholder">carte</div>
+			    <div id="EmplacementItineraireTexte">text</div>
+						
+			</div>
+			<small>Source : CROUS Clermont-Ferrand</small>
 	
-	</div>
+		</div>
 </body>
 </html>
