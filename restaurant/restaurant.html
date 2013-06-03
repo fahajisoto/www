@@ -39,8 +39,19 @@
 			<a id="btnBack" data-role="button" data-transition="slide" data-ajax="false">Les resto</a>
 		</div>
 		<div data-role="content">
+		 <div data-role="fieldcontain">
+			<form>
+				<fieldset data-role="controlgroup">
+					<legend>mode d'affichage</legend>
+					<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />
+					<label for="checkbox-2">afficher tous les restaurants</label>
+				</fieldset>
+			</form>	
+		</div>
 				<ul id="listeAlpha" data-role="listview"></ul>
-				<ul id="listebeta"  data-role="listview" data-inset="true"></ul>
+				<ul id="listebeta"  data-role="listview" data-inset="true">
+				<li></li>
+				</ul>
 				<a id="itineraire" onclick="window.location='../../www/map/itineraire.html';" >Itinéraire</a>
 		</div>
 		<div id="itineraire">
