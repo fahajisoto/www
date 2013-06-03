@@ -34,16 +34,28 @@
 		</div>	
 			<input id="end" type="hidden" value=""/>
 	
-	<div id="header2">	
-	<h3>Liste des restaurants Universitaire:</h3>
-	<a id="btnBack" data-role="button" data-transition="slide" data-ajax="false">Les resto</a>
-	</div>
-				<div data-role="content">
+		<div id="header2">	
+			<h3>Liste des restaurants Universitaire:</h3>
+			<a id="btnBack" data-role="button" data-transition="slide" data-ajax="false">Les resto</a>
+		</div>
+		<div data-role="content">
 				<ul id="listeAlpha" data-role="listview"></ul>
 				<ul id="listebeta"  data-role="listview" data-inset="true"></ul>
 				<a id="itineraire" onclick="window.location='../../www/map/itineraire.html';" >Itinéraire</a>
-				</div>
+		</div>
+		<div id="itineraire">
 		
+			<div>
+				<select id="mode" onchange="calcRoute();">
+				  <option value="DRIVING">Voiture</option>
+				  <option value="WALKING">Marche</option>
+				  <option value="BICYCLING">Velo</option>
+				</select>
+			</div>
+		    <div id="mapholder">carte</div>
+		    <div id="EmplacementItineraireTexte">text</div>
+					
+		</div>
 		<small>Source : CROUS Clermont-Ferrand</small>
 	
 	</div>
