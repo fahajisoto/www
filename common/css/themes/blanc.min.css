@@ -591,6 +591,7 @@ body.loading .Loading {
 	padding: 0 !important;
 	text-align: center;
 	height: 100% !important;
+	width: 100% !important;
 	display: flex;
 }
 
