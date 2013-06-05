@@ -34,7 +34,7 @@ function initialize() {
 				
 				alert("Loading, please wait...");
 				$('#Loading').show();
-				
+				$('#mapholder').hide();
 				$("#mapholder").css({ opacity: 0, zoom: 0 });
 				if (navigator.geolocation)
 				{
@@ -78,6 +78,7 @@ function showPosition(position)
 
 				*/
 					$('#liste_class').hide();
+					$('#mapholder').show();
 					$("#mapholder").css({ opacity: 1, zoom: 1 });
 					$('#Loading').hide();
 }

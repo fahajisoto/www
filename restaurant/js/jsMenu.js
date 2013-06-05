@@ -12,13 +12,12 @@ var directionsService = new google.maps.DirectionsService();
 var map;
 var address ;
 var end;
-
+var counter=0;
 function init_itineraire(lat,lan){
 	end = new google.maps.LatLng(lat,lan);
 	getLocation();
 
 }
-
 
 function getLocation() 
 {
@@ -35,7 +34,7 @@ function getLocation()
 function showPosition(position)
 {
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);		
-	alert("address="+address+",end="+end);
+	//alert("address="+address+",end="+end);
 	initialize();
 	$('#mapholder').show();
 	$("#mapholder").css({ opacity: 1, zoom: 1 });
@@ -111,10 +110,33 @@ function calcRoute() {
 	}
 
 
+function selectchoice() {
+		  var affichageMode = document.getElementById("mode_affichage").value;
+		 //alert(affichageMode);
+		  switch(affichageMode){
+			case 'tous':{
+				$('#listeAlpha').hide();
+				$('#listebeta').hide();
+				$('#itineraire').hide();
+				$('#crous').hide();
+				$('#EmplacementItineraireTexte').hide();
+				$("#btnBack").show();
+				$('#mode_affichage').hide();
+				break;
+			}
+			case 'un':{
+				$('#listeAlpha').show();
+				break;
+			}
+	  }
+			
+	}
+
 
 function btnhide(){
 	$("#btnBack").hide();
 	$("#mode").hide();
+	$("#Loading").hide();
 }
 //fonction qui met en place la liste des resto
 function makeList(json) {
@@ -128,8 +150,9 @@ function makeList(json) {
 						"data-iconshadow=\"true\" onclick=\"menu("+i+");init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+")\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
 						"<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"
 						+ jsonResto[i].nom +","+jsonResto[i].latitude+","+jsonResto[i].longitude+"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
-			
+			counter++;
 			}
+			
 			$('#listeAlpha').html(html);
 		}
 		else {

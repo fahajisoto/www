@@ -40,13 +40,14 @@
 		</div>
 		<div data-role="content">
 			<div id="page_layout" data-role="content">
-				<div><select id="mode d'affichage" onchange="initialize()">
+				<div>
+				<select id="mode_affichage" onchange="selectchoice()">
 					<option value="tous">afficher tous les restaurants</option>
 					<option value="un">choisire un restaurant</option>
 					</select>
 				</div>
 				
-				 	<img src="../icons/loading.gif"/>
+				 	<img id="Loading" src="../icons/loading.gif"/>
 				</div>
 					
 						<ul id="listeAlpha" data-role="listview"></ul>
@@ -66,7 +67,7 @@
 			    <div id="EmplacementItineraireTexte">text</div>
 						
 			</div>
-			<small>Source : CROUS Clermont-Ferrand</small>
+			<small id="crous">Source : CROUS Clermont-Ferrand</small>
 	
 		</div>
 </body>
