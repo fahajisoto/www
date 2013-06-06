@@ -5,6 +5,13 @@ var myMarker;
 var address ;			
 var mapOptions;
 var counter=0;
+var nbelt, i;
+var lat;
+var lon;		
+var directionDisplay;
+var requeteItineraire;
+var directionsService = new google.maps.DirectionsService();
+var end;
 
 function listbuildings(list){
 	$('#listbuildings').hide();
@@ -159,7 +166,7 @@ function listbuildings(list){
 	}
 	
 	for(var i in places){
-		 html += "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" ontouchstart=\"showPosition(" + places[i][0]+ ","+ places[i][1] + ")\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\" onclick=\"showPosition(" + places[i][0]+ ","+ places[i][1] + ")\">"+ i +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
+		 html += "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" onclick=\"init_itineraire(" + places[i][0]+ ","+ places[i][1] + ")\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"+ i +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
 		 counter++;
 	}
 	
@@ -169,6 +176,15 @@ function listbuildings(list){
 	$('#backButton').attr('onclick', 'back_to_category('+a+')');
 
 }
+
+
+function setEnd(lat,lon){
+	//alert("here in setEnd"+lat+"lon:"+lon);
+	end = new google.maps.LatLng(lat,lon);
+	//alert("end="+end);
+	$('#end').attr('value', end);
+}
+
 function back_to_category(a){
 	html="";
 	if(a==1){
@@ -190,6 +206,7 @@ function back_to_category(a){
 	
 	
 }
+/*
 
 function showPosition(lat,lon)
 {
@@ -223,3 +240,104 @@ function showPosition(lat,lon)
 	//$("#mapholder").show();
 	$("#mapholder").css({ opacity: 1, zoom: 1 });
 }
+*/
+
+function init_itineraire(lat,lan){
+	end = new google.maps.LatLng(lat,lan);
+	getLocation();
+
+}
+
+function getLocation() 
+{
+	//alert("Loading, please wait...");
+	$("#mapholder").css({ opacity: 0, zoom: 0 });
+	if (navigator.geolocation)
+		{
+			navigator.geolocation.getCurrentPosition(showPosition,showError);
+		}
+	else{x.innerHTML="Geolocation is not supported by this browser.";}
+
+}
+
+function showPosition(position)
+{
+	a=2;
+	$('#backButton').attr('onclick', 'back_to_category('+a+')');
+	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);		
+	//alert("address="+address+",end="+end);
+	initialize();
+	$('#mapholder').show();
+	$("#mapholder").css({ opacity: 1, zoom: 1 });
+	$("#listbuildings").hide();
+	$("#newlist").hide();
+	$("#header2").hide();
+	//$("#mapholder").show();
+	$("#mapholder").css({ opacity: 1, zoom: 1 });
+}
+
+function showError(error)
+{
+	switch(error.code) 
+	{
+		case error.PERMISSION_DENIED:
+		x.innerHTML="User denied the request for Geolocation."
+		break;
+		case error.POSITION_UNAVAILABLE:
+		x.innerHTML="Location information is unavailable."
+		break;
+		case error.TIMEOUT:
+		x.innerHTML="The request to get user location timed out."
+		break;
+		case error.UNKNOWN_ERROR:
+		x.innerHTML="An unknown error occurred."
+		break;
+	}
+
+}
+
+function initialize() 
+{
+     directionsDisplay = new google.maps.DirectionsRenderer();
+
+     var optionsCarte = {
+          zoom: 7,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          center: address,
+				mapTypeControlOptions: 
+				{
+				  style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+				  position: google.maps.ControlPosition.TOP_LEFT
+				}
+     }
+     map = new google.maps.Map(document.getElementById("mapholder"), optionsCarte);
+     directionsDisplay.setMap(map);
+     directionsDisplay.setPanel(document.getElementById("EmplacementItineraireTexte"));
+     var requeteItineraire = {
+          origin: address,
+          destination: end,
+          region: "fr",
+			travelMode: google.maps.DirectionsTravelMode.DRIVING
+     };
+     directionsService.route(requeteItineraire, function(response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+               directionsDisplay.setDirections(response);
+          }
+     });
+	   
+}
+function calcRoute() {
+		  var selectedMode = document.getElementById("mode").value;
+		  var requeteItineraire = {
+			  origin: address,
+			  destination: end,
+			  region: "fr",
+			  travelMode: google.maps.TravelMode[selectedMode]
+					};
+			directionsService.route(requeteItineraire, function(response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+               directionsDisplay.setDirections(response);
+          }
+			});
+			
+	}

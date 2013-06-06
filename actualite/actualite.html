@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="../common/css/themes/blanc.min.css" />
 		<link rel="stylesheet" href="../common/css/jquery.mobile.structure-1.3.1.min.css" /> 
 		<script src="../common/js/jquery-1.9.1.min.js"> </script>
+				<script src="js/actu.js"> </script>
 		<script type="text/javascript">
 			$(document).bind('mobileinit', function(){
 				$.mobile.page.prototype.options.addBackBtn = true;
@@ -27,7 +28,7 @@
 		
 	</head>
 	<body >
-	<div id="mainPage" data-role="page">
+	<div id="mainPage" data-role="page" onload="recuperation()">
 		<div id="uda_header" data-role="header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
@@ -48,7 +49,8 @@
 				</tr>
 			</table>
 		</div>
-		<div id="actu"></div>
+	
+		<div id="divRss"></div>
 		</div>
 	</body>
 </html>
