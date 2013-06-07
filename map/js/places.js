@@ -161,14 +161,14 @@ function listbuildings(list){
 	}
 	
 	for(var i in places){
-		 html += "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" onclick=\"init_itineraire(" + places[i][0]+ ","+ places[i][1] + ")\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"+ i +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
+		 html += "<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" data-iconshadow=\"true\" ontouchstart=\"init_itineraire(" + places[i][0]+ ","+ places[i][1] + ")\" data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\" data-theme=\"a\"><div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"+ i +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
 		 counter++;
 	}
 	
 	$('#newlist').html(html);
 	$('#listbuildings').hide();
 	a=1;
-	$('#backButton').attr('onclick', 'back_to_category('+a+')');
+	$('#backButton').attr('ontouchstart', 'back_to_category('+a+')');
 
 }
 
@@ -184,7 +184,7 @@ function back_to_category(a){
 	$('#listbuildings').show();
 	$('#newlist').hide();	
 	$("#mapholder").css({ opacity: 0, zoom: 0 });
-	$('#backButton').attr('onclick', 'window.location=\'map.html\'\;');
+	$('#backButton').attr('ontouchstart', 'window.location=\'map.html\'\;');
 	}
 
 	else{
@@ -192,7 +192,7 @@ function back_to_category(a){
 		$('#newlist').show();
 		$('#listbuildings').hide();
 		$("#mapholder").css({ opacity: 0, zoom: 0 });
-		$('#backButton').attr('onclick', 'back_to_category('+a+')');
+		$('#backButton').attr('ontouchstart', 'back_to_category('+a+')');
 	}
 }
 
@@ -217,7 +217,7 @@ function getLocation()
 function showPosition(position)
 {
 	a=2;
-	$('#backButton').attr('onclick', 'back_to_category('+a+')');
+	$('#backButton').attr('ontouchstart', 'back_to_category('+a+')');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);		
 	initialize();
 	$('#mapholder').show();
