@@ -565,7 +565,7 @@ body.loading .Loading {
 }
 
 #mainPage {
-
+	background: #000;
 	margins: 0px;
 	padding: 0px;
 	text-align: center;
