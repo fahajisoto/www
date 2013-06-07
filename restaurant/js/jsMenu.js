@@ -211,8 +211,6 @@ function makemenu(json){
 	//var day = today.getFullYear()+"-"+today.getUTCMonth()+"-22" ;
 	var day2 = serveur.getFullYear()+"-"+serveur.getUTCMonth()+"-"+serveur.getDate();	
 		html = "<li><h3>"+nomResto+"</h3></li>";
-
-		alert(Radresse);
 		if(day == day2)
 		{
 		if(MidiSize>0)
