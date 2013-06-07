@@ -13,12 +13,6 @@
 	background: #000000;
 	color: #fafafa;
 	font-weight: bold;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),to(#000000));
-	background-image: -webkit-linear-gradient(#000000, #fafafa);
-	background-image: -moz-linear-gradient(#000000, #fafafa);
-	background-image: -ms-linear-gradient(#000000, #fafafa);
-	background-image: -o-linear-gradient(#000000, #fafafa);
-	background-image: linear-gradient(#000000, #fafafa);
 }
 
 .ui-bar-a .ui-link-inherit {
@@ -52,13 +46,7 @@
 	color: #000000;
 	text-shadow: 0 1px 0 #eeeeee;
 	background: #000000;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa),
-		to(#000000));
-	background-image: -webkit-linear-gradient(#000000, #fafafa);
-	background-image: -moz-linear-gradient(#000000, #fafafa);
-	background-image: -ms-linear-gradient(#000000, #fafafa);
-	background-image: -o-linear-gradient(#000000, #fafafa);
-	background-image: linear-gradient(#000000, #fafafa);
+
 }
 
 .ui-overlay-a {
@@ -633,7 +621,7 @@ th {
 td,th {
 	border: 5px solid #444;
 	text-align: center;
-	background: #fff;
+	text_color: #fff;
 }
 
 
