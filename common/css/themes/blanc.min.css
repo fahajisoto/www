@@ -577,7 +577,7 @@ body.loading .Loading {
 }
 
 #mainPage {
-	background-color: #000000;
+
 	margins: 0px;
 	padding: 0px;
 	text-align: center;
@@ -586,7 +586,7 @@ body.loading .Loading {
 }
 
 #maintable {
-	background-color: #000000;
+
 	margin-top: 0 !important;
 	padding: 0 !important;
 	text-align: center;
