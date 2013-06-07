@@ -13,6 +13,10 @@ var map;
 var address ;
 var end;
 var counter=0;
+var Radresse;
+var Rcode_postal;
+var Rdescription;
+
 function init_itineraire(lat,lan){
 	end = new google.maps.LatLng(lat,lan);
 	getLocation();
@@ -132,9 +136,9 @@ function makeList(json) {
 		if( nbelt > 0 ) {		
 			for(i=0; i<nbelt;i++){
 				html +="<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" " +
-						"data-iconshadow=\"true\" onclick=\"menu("+i+");init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+")\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
+						"data-iconshadow=\"true\" onclick=\"menu("+i+");init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");makeaddress('"+jsonResto[i].adresse+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"')\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
 						"<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"
-						+ jsonResto[i].nom +","+jsonResto[i].latitude+","+jsonResto[i].longitude+"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
+						+ jsonResto[i].nom +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
 			counter++;
 			}
 			
@@ -149,7 +153,11 @@ function makeList(json) {
 	}
 
 }
-
+function makeaddress(address,code,desc){
+	Radresse=address;
+	Rcode_postal=code;
+	Rdescription=desc;
+}
 // init la liste des resto par ordre alpha
 function initMenuAlpha() {
 	$('#itineraire').hide;
@@ -201,12 +209,12 @@ function makemenu(json){
 	var serveur= new Date(jsonMenu.date);
 	var day = today.getFullYear()+"-"+today.getUTCMonth()+"-"+today.getDate() ;
 	//var day = today.getFullYear()+"-"+today.getUTCMonth()+"-22" ;
-	var day2 = serveur.getFullYear()+"-"+serveur.getUTCMonth()+"-"+serveur.getDate();
-	if(day == day2)
-		{
-		
+	var day2 = serveur.getFullYear()+"-"+serveur.getUTCMonth()+"-"+serveur.getDate();	
 		html = "<li><h3>"+nomResto+"</h3></li>";
 
+		alert(Radresse);
+		if(day == day2)
+		{
 		if(MidiSize>0)
 			html += "<li id=\"EntréesM\" class=\"midi\"><p><h4>Entrées:</h4>"+EntréesMidi+"</p></li><li id=\"PlatsM\" class=\"midi\"><p><h4>Plats:</h4>"+PlatsMidi+
 			"</p></li><li id=\"LégumesM\" class =\"midi\"data-theme=\"b\"><p><h4>Légumes:</h4>"+ LégumesMidi+
@@ -230,10 +238,6 @@ function makemenu(json){
 		}
 		else {
 			alert("le menu n'a pas été envoyer!!!");
-			html = "<li><h3>"+nomResto+"</h3></li>";
-			html+="<li><p>Pas de service</p></li>";	
-			html +="<li>tel:</li>";
-			html +="<li>address:</li>";
 			$('#listeAlpha').hide();
 			$('#page_footer').hide();
 			$("#listebeta").show();
@@ -249,6 +253,14 @@ function makemenu(json){
 	else {
 		alert("closed");
 	}
+	html+="<li><h4>adresse:"+Radresse+","+Rcode_postal+","+Rdescription+"</h4></li>";
+	$('#listeAlpha').hide();
+	$('#page_footer').hide();
+	$("#listebeta").show();
+	$('#itineraire').show();
+	$("#mode").show();
+	$("#btnBack").show();
+	$('#listebeta').html(html);	
 	
 }
 
