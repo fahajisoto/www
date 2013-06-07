@@ -621,7 +621,7 @@ th {
 td,th {
 	border: 5px solid #444;
 	text-align: center;
-	text_color: #fff;
+	text-color: #fff;
 }
 
 
@@ -642,9 +642,8 @@ td,th {
 	margin-top: 0em;
 }
 #name{
-	
 	background: #bbb;
-	text-color: #000;
+	text-color: #fff;
 }
 
 #listAnnu{
