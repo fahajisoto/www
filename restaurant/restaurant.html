@@ -45,44 +45,38 @@
 </head>	
 <body onload="btnhide()">
 	<div id="mainPage" data-role="page" data-theme="a">
-		
 		<div data-role="header" id="uda_header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
-					<li><a data-role="button" ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false"><img src="../icons/home.png" ></a>  </li>
-					
-					<li><a data-role="button"  ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false"><img src="../icons/back_button.png" ></a></li>
+					<li><a data-role="button" onclick="window.location='../main.html';" data-transition="slide" data-ajax="false"><img src="../icons/home.png" ></a>  </li>	
+					<li><a data-role="button"  onclick="window.location='../main.html';" data-transition="slide" data-ajax="false"><img src="../icons/back_button.png" ></a></li>
 				</ul>
-				 
 			</div>
 		</div>	
-			<input id="end" type="hidden" value=""/>
-	
+		<input id="end" type="hidden" value=""/>
 		<div id="header2">	
 			<h3>Liste des restaurants Universitaire:</h3>
 			<a id="btnBack" data-role="button" data-transition="slide" data-ajax="false">Les resto</a>
 		</div>
-			<div id="page_layout" >
-				<div>
-				<!-- 
+		<div id="page_layout">
+			<!--
+			<div>
 				<select id="mode_affichage" onchange="selectchoice()">
 					<option value="tous">afficher tous les restaurants</option>
 					<option value="un">choisire un restaurant</option>
-					</select>
-				</div>
-				-->
-				 	<img id="Loading" src="../icons/loading.gif"/>
-				</div>
-						<ul id="listeAlpha" data-role="listview"></ul>
-						<ul id="listebeta"  data-role="listview" data-inset="true">
-						<li></li>
-						</ul>
+				</select>
+				<img id="Loading" src="../icons/loading.gif"/>
 			</div>
+			-->
+				<ul id="listeAlpha" data-role="listview"></ul>
+				<ul id="listebeta"  data-role="listview" data-inset="true">
+				</ul>
 			<div id="itineraire">	
-			    <div id="mapholder"></div>
-			    <div id="EmplacementItineraireTexte"></div>					
+		 		 <div id="mapholder"></div>
+		  		 <div id="EmplacementItineraireTexte"></div>					
 			</div>
-			<small id="crous">Source : CROUS Clermont-Ferrand</small>
-
+		</div>
+		<small id="crous">Source : CROUS Clermont-Ferrand</small>
+	</div>
 </body>
 </html>

@@ -21,7 +21,7 @@ function init_itineraire(lat,lan){
 
 function getLocation() 
 {
-	alert("Loading, please wait...");
+	//alert("Loading, please wait...");
 	$("#mapholder").css({ opacity: 0, zoom: 0 });
 	if (navigator.geolocation)
 		{
