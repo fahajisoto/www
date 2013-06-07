@@ -633,7 +633,7 @@ th {
 td,th {
 	border: 5px solid #444;
 	text-align: center;
-	background: transparent;
+	background: #fff;
 }
 
 
