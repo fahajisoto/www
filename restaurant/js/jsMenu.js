@@ -88,6 +88,7 @@ function initialize()
           }
      });
 		$('#listeAlpha').hide();
+		$('#page_footer').hide();
 		$("#listebeta").show();
 		$("#btnBack").show();
 	   
@@ -98,6 +99,7 @@ function selectchoice() {
 		  switch(affichageMode){
 			case 'tous':{
 				$('#listeAlpha').hide();
+				$('#page_footer').hide();
 				$('#listebeta').hide();
 				$('#itineraire').hide();
 				$('#crous').hide();
@@ -108,6 +110,7 @@ function selectchoice() {
 			}
 			case 'un':{
 				$('#listeAlpha').show();
+				$('#page_footer').show();
 				break;
 			}
 	  }
@@ -218,6 +221,7 @@ function makemenu(json){
 			html += "<li><p class=\"soir\"><span style='text-decoration:underline' ><h4>Soir</span> : Pas de service</h4></p></li>";
 		$('#listebeta').html(html);	
 		$('#listeAlpha').hide();
+		$('#page_footer').hide();
 		$("#listebeta").show();
 		$('#itineraire').show();
 		$("#mode").show();
@@ -231,6 +235,7 @@ function makemenu(json){
 			html +="<li>tel:</li>";
 			html +="<li>address:</li>";
 			$('#listeAlpha').hide();
+			$('#page_footer').hide();
 			$("#listebeta").show();
 			$('#itineraire').show();
 			$("#mode").show();
@@ -260,6 +265,7 @@ $(document).on('click','#btnBack', function(){
 								$("#itineraire").hide();	
 								$("#mode").hide();
 								$("#listeAlpha").show();
+								$('#page_footer').show();
 								$('#listebeta').hide();
 							});
 $(document).ready(function() {
