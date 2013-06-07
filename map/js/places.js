@@ -203,44 +203,7 @@ function back_to_category(a){
 		$("#mapholder").css({ opacity: 0, zoom: 0 });
 		$('#backButton').attr('onclick', 'back_to_category('+a+')');
 	}
-	
-	
 }
-/*
-
-function showPosition(lat,lon)
-{
-	a=2;
-	$('#backButton').attr('onclick', 'back_to_category('+a+')');
-
-	address = new google.maps.LatLng(45.769,3.09);			
-	mapOptions = {
-		zoom: 17,
-		center: address,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};	
-	map = new google.maps.Map(document.getElementById('mapholder'),mapOptions);
-
-	address = new google.maps.LatLng(lat,lon);
-	mapOptions = {
-		zoom: 17,
-		center: address,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	map = new google.maps.Map(document.getElementById('mapholder'),mapOptions);
-	google.maps.event.trigger(map,'resize');
-	myMarker = new google.maps.Marker({
-		map: map,
-		position: address,
-		title: "TEST"
-	});	
-	$("#listbuildings").hide();
-	$("#newlist").hide();
-	$("#header2").hide();
-	//$("#mapholder").show();
-	$("#mapholder").css({ opacity: 1, zoom: 1 });
-}
-*/
 
 function init_itineraire(lat,lan){
 	end = new google.maps.LatLng(lat,lan);
@@ -250,7 +213,7 @@ function init_itineraire(lat,lan){
 
 function getLocation() 
 {
-	//alert("Loading, please wait...");
+	alert("Loading, please wait...");
 	$("#mapholder").css({ opacity: 0, zoom: 0 });
 	if (navigator.geolocation)
 		{
@@ -265,14 +228,12 @@ function showPosition(position)
 	a=2;
 	$('#backButton').attr('onclick', 'back_to_category('+a+')');
 	address = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);		
-	//alert("address="+address+",end="+end);
 	initialize();
 	$('#mapholder').show();
 	$("#mapholder").css({ opacity: 1, zoom: 1 });
 	$("#listbuildings").hide();
 	$("#newlist").hide();
 	$("#header2").hide();
-	//$("#mapholder").show();
 	$("#mapholder").css({ opacity: 1, zoom: 1 });
 }
 
@@ -317,7 +278,7 @@ function initialize()
           origin: address,
           destination: end,
           region: "fr",
-			travelMode: google.maps.DirectionsTravelMode.DRIVING
+			travelMode: google.maps.DirectionsTravelMode.WALKING
      };
      directionsService.route(requeteItineraire, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
@@ -326,18 +287,3 @@ function initialize()
      });
 	   
 }
-function calcRoute() {
-		  var selectedMode = document.getElementById("mode").value;
-		  var requeteItineraire = {
-			  origin: address,
-			  destination: end,
-			  region: "fr",
-			  travelMode: google.maps.TravelMode[selectedMode]
-					};
-			directionsService.route(requeteItineraire, function(response, status) {
-          if (status == google.maps.DirectionsStatus.OK) {
-               directionsDisplay.setDirections(response);
-          }
-			});
-			
-	}
