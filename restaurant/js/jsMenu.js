@@ -80,7 +80,7 @@ function initialize()
           origin: address,
           destination: end,
           region: "fr",
-			travelMode: google.maps.DirectionsTravelMode.WALKING
+			travelMode: google.maps.DirectionsTravelMode.DRIVING
      };
      directionsService.route(requeteItineraire, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {

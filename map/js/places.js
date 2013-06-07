@@ -19,7 +19,6 @@ function listbuildings(list){
 	var places;
 
 	switch(list){
-	
 	case 'universite':{
 		places={
 				'université': [45.770584,3.087909],
@@ -44,8 +43,7 @@ function listbuildings(list){
 				'CERDI':[45.77061,3.085839],
 		};
 		break;
-	}
-	
+	}	
 
 	case 'sante':{	
 		places = {
@@ -58,8 +56,7 @@ function listbuildings(list){
 		};
 		break;
 	}
-	
-	
+		
 	case 'loisir':{
 		places = {
 				'Service Université Culture':[45.771678,3.09095],
@@ -72,8 +69,6 @@ function listbuildings(list){
 		};
 		break;
 	}
-	
-	
 	
 	case 'BU':{
 		places = {
@@ -179,9 +174,7 @@ function listbuildings(list){
 
 
 function setEnd(lat,lon){
-	//alert("here in setEnd"+lat+"lon:"+lon);
 	end = new google.maps.LatLng(lat,lon);
-	//alert("end="+end);
 	$('#end').attr('value', end);
 }
 
@@ -189,8 +182,7 @@ function back_to_category(a){
 	html="";
 	if(a==1){
 	$('#listbuildings').show();
-	$('#newlist').hide();
-	//$('#mapholder').hide();	
+	$('#newlist').hide();	
 	$("#mapholder").css({ opacity: 0, zoom: 0 });
 	$('#backButton').attr('onclick', 'window.location=\'map.html\'\;');
 	}
@@ -199,7 +191,6 @@ function back_to_category(a){
 		a=1;
 		$('#newlist').show();
 		$('#listbuildings').hide();
-		//$('#mapholder').hide();
 		$("#mapholder").css({ opacity: 0, zoom: 0 });
 		$('#backButton').attr('onclick', 'back_to_category('+a+')');
 	}
@@ -278,7 +269,7 @@ function initialize()
           origin: address,
           destination: end,
           region: "fr",
-			travelMode: google.maps.DirectionsTravelMode.WALKING
+			travelMode: google.maps.DirectionsTravelMode.DRIVING
      };
      directionsService.route(requeteItineraire, function(response, status) {
           if (status == google.maps.DirectionsStatus.OK) {
