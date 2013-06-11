@@ -292,7 +292,7 @@ $(document).ready(function() {
 	$("#controle").hide();
 });
 
-$("#btnnext").swipeleft(function() {
+$(document).on('swipeleft','#btnnext', function() {
 	numero=numero+1;
 	jour=jour+1;
 	if(jour>5){
@@ -303,9 +303,10 @@ $("#btnnext").swipeleft(function() {
 	setdate();
 	menu(m);
 
-});
+} );
 
-$("#btnlast").swiperight(function() {
+
+$(document).on('swiperight','#btnlast', function() {
 	numero=numero-1;
 	jour=jour-1;
 	if(jour<1){
