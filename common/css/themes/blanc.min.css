@@ -657,3 +657,6 @@ td,th {
 	padding:1px !important;
 	margins: 1px !important;	
 }
+#textmenu{
+	border:none !important;
+}

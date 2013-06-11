@@ -216,7 +216,7 @@ function menu(iter) {
 
 function makemenu(json){
 	html="";
-	html="<li><h3>"+nomResto+"</h3></li>";
+	$('#Rname').html("<li><h3>"+nomResto+"</h3></li>");
 	if(json!="")
 	{
 		var jsonMenu = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);
