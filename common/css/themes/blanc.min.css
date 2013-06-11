@@ -655,6 +655,15 @@ td,th {
 .annuaire{
 	background: #000;
 	padding:1px !important;
-	margins: 1px !important;
-	
+	margins: 1px !important;	
+}
+#btnnext{
+width:10%;
+background-color:transparent;
+float:right;
+}
+#btnlast{
+width:10%;
+background-color:transparent;
+float:left;
 }

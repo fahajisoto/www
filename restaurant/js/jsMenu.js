@@ -18,6 +18,10 @@ var Rcode_postal;
 var Rdescription;
 var nomResto;
 var day;
+var today = new Date();
+var m;
+var numero=today.getDate();
+var jour;
 
 function init_itineraire(lat,lan){
 	end = new google.maps.LatLng(lat,lan);
@@ -95,6 +99,8 @@ function initialize()
 		$('#page_footer').hide();
 		$("#listebeta").show();
 		$("#btnBack").show();
+
+		$("#controle").show();
 	   
 }
 
@@ -109,6 +115,8 @@ function selectchoice() {
 				$('#crous').hide();
 				$('#EmplacementItineraireTexte').hide();
 				$("#btnBack").show();
+				$("#controle").show();
+		
 				$('#mode_affichage').hide();
 				break;
 			}
@@ -124,6 +132,8 @@ function selectchoice() {
 
 function btnhide(){
 	$("#btnBack").hide();
+	$("#controle").hide();
+
 	$("#mode").hide();
 	$("#Loading").hide();
 }
@@ -177,16 +187,26 @@ function initMenuAlpha() {
 	});
 }
 
+function setdate(){
+	var month= today.getMonth();
+
+	TabJour = new Array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
+	TabMois = new Array("janvier","février","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","décembre");
+	messageDate = TabJour[jour] + " " + numero + " " + TabMois[month];
+	$('#pdate').html(messageDate);
+	month=month+1;
+	if (month>9)
+		day = today.getFullYear()+"-"+month+"-"+numero;
+	else
+		day = today.getFullYear()+"-0"+month+"-"+numero;
+
+}
+
 function menu(iter) {
 	//recuperation du tableau des resto
-	var today = new Date(); 
-	var month= 1+today.getUTCMonth();
-	if (month>9)
-		day = today.getFullYear()+"-"+month+"-"+today.getDate();
-	else
-		day = today.getFullYear()+"-0"+month+"-"+today.getDate();
+	m=iter;
 	$.ajax({
-		url:"http://udamobile.u-clermont1.fr/v2/restaurant/?menu="+iter+"&token=2a2a504c2d&date="+day,
+		url:"http://udamobile.u-clermont1.fr/v2/restaurant/?menu="+m+"&token=2a2a504c2d&date="+day,
 		type: "GET",
 		success: function(feedback) {
 			makemenu(feedback);		
@@ -214,7 +234,6 @@ function makemenu(json){
 		var DessertsSoir= jsonMenu.soir.Desserts;
 		}
 		var serveur= jsonMenu.date;
-		alert("serveur="+serveur+",today="+day);
 			if(day == serveur)
 			{
 				if(MidiSize>0)
@@ -233,11 +252,10 @@ function makemenu(json){
 			else {
 				alert("le menu n'a pas été envoyer!!!");		
 			}
-		//setEnd(lat,lan);
-	
+
 	}
 	else {
-		alert("closed");
+		alert("le menu n'a pas été envoyer!!!");
 	}
 	html+="<li><h4>adresse:"+Radresse+","+Rcode_postal+","+Rdescription+"</h4></li>";
 	$('#listebeta').html(html);	
@@ -247,23 +265,17 @@ function makemenu(json){
 	$('#itineraire').show();
 	$("#mode").show();
 	$("#btnBack").show();
+	$("#controle").show();
 
 }
-/*
-function setEnd(lat,lon){
-	//alert("here in setEnd"+lat+"lon:"+lon);
-	end = new google.maps.LatLng(lat,lan);
-	alert("here5:"+lat);
-	//alert("end="+end);
-	$('#end').attr('value', end);
-}
-*/
+
 //btn retour sur la liste des resto qd on est ds le menu
 $(document).on('click','#btnBack', function(){ 
 								initMenuAlpha();
 								html="";
 								$('#EmplacementItineraireTexte').html(html);	
-								$("#btnBack").hide();					
+								$("#btnBack").hide();
+								$("#controle").hide();
 								$("#itineraire").hide();	
 								$("#mode").hide();
 								$("#listeAlpha").show();
@@ -271,16 +283,36 @@ $(document).on('click','#btnBack', function(){
 								$('#listebeta').hide();
 							});
 $(document).ready(function() {
+	
 	initMenuAlpha();
-	today = new Date;
-		jour = today.getDay();
-		numero = today.getDate();
-		if (numero<10)
-			numero = "0"+numero;
-		mois = today.getMonth();
-		TabJour = new Array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
-		TabMois = new Array("janvier","février","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","décembre");
-		messageDate = TabJour[jour] + " " + numero + " " + TabMois[mois];
-		$("p.date").text(messageDate);
-		
+	jour = today.getDay();
+	numero = today.getDate();
+	setdate();
+	$("#controle").hide();
+});
+
+$(document).on('click','#btnnext', function(){ 
+	numero=numero+1;
+	jour=jour+1;
+	if(jour>5){
+		alert("pas acess au menu des week-end");
+		jour=1;
+		numero=numero+2;
+	}
+	setdate();
+	menu(m);
+
+});
+
+$(document).on('click','#btnlast', function(){ 
+	numero=numero-1;
+	jour=jour-1;
+	if(jour<1){
+		alert("pas acess au menu des week-end");
+		numero=numero-2;
+		jour=5;
+}
+	setdate();
+	menu(m);
+
 });
