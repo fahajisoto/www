@@ -4,15 +4,11 @@ var jsonResto;
 var lat;
 var lon;		
 var mapOptions;
-var directionDisplay;
-var directionsService;
 var requeteItineraire;
-var directionDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
 var address ;
 var end;
-var counter=0;
 var Radresse;
 var Rcode_postal;
 var Rdescription;
@@ -104,32 +100,6 @@ function initialize()
 	   
 }
 
-function selectchoice() {
-		  var affichageMode = document.getElementById("mode_affichage").value;
-		  switch(affichageMode){
-			case 'tous':{
-				$('#listeAlpha').hide();
-				$('#page_footer').hide();
-				$('#listebeta').hide();
-				$('#itineraire').hide();
-				$('#crous').hide();
-				$('#EmplacementItineraireTexte').hide();
-				$("#btnBack").show();
-				$("#btnnext").show();
-				$("#btnlast").show();		
-				$('#mode_affichage').hide();
-				break;
-			}
-			case 'un':{
-				$('#listeAlpha').show();
-				$('#page_footer').show();
-				break;
-			}
-	  }
-			
-	}
-
-
 function btnhide(){
 	$("#btnBack").hide();
 	$("#btnnext").hide();
@@ -149,7 +119,6 @@ function makeList(json) {
 						"data-iconshadow=\"true\" onclick=\"makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+",'"+jsonResto[i].date+"')\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
 						"<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"
 						+ jsonResto[i].nom +"("+ jsonResto[i].etat +")"+"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
-			counter++;
 			}
 			
 			$('#listeAlpha').html(html);
@@ -182,7 +151,6 @@ function initMenuAlpha() {
 		url:"http://udamobile.u-clermont1.fr/v2/restaurant/",
 		type: "GET",
 		success: function(feedback) {
-			//var jsonResto = $.parseJSON(feedback);
 			makeList(feedback);
 		},
 	});
@@ -276,25 +244,27 @@ $(document).on('click','#btnBack', function(){
 	jour = today.getDay();
 	numero = today.getDate();
 	setdate();
-								initMenuAlpha();
-								html="";
-								$('#EmplacementItineraireTexte').html(html);	
-								$("#btnBack").hide();
-								$("#btnnext").hide();
-								$("#btnlast").hide();
-								$("#itineraire").hide();	
-								$("#mode").hide();
-								$("#listeAlpha").show();
-								$('#page_footer').show();
-								$('#listebeta').hide();
-							});
+	initMenuAlpha();
+	html="";
+	$('#EmplacementItineraireTexte').html(html);
+	$('#listebeta').hide();
+	$("#btnBack").hide();
+	$("#btnnext").hide();
+	$("#btnlast").hide();
+	$("#itineraire").hide();	
+	$("#mode").hide();
+	$("#listeAlpha").show();
+	$('#page_footer').show();
+
+});
+
 $(document).ready(function() {
+	$("#btnnext").hide();
+	$("#btnlast").hide();
 	initMenuAlpha();
 	jour = today.getDay();
 	numero = today.getDate();
 	setdate();
-	$("#btnnext").hide();
-	$("#btnlast").hide();
 });
 
 $(document).on('swipeleft','#btnnext', function() {
@@ -318,7 +288,7 @@ $(document).on('swiperight','#btnlast', function() {
 		alert("pas acess au menu des week-end");
 		numero=numero-2;
 		jour=5;
-}
+	}
 	setdate();
 	menu(m);
 
