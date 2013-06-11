@@ -133,7 +133,6 @@ function selectchoice() {
 function btnhide(){
 	$("#btnBack").hide();
 	$("#controle").hide();
-
 	$("#mode").hide();
 	$("#Loading").hide();
 }
@@ -188,8 +187,8 @@ function initMenuAlpha() {
 }
 
 function setdate(){
+	
 	var month= today.getMonth();
-
 	TabJour = new Array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
 	TabMois = new Array("janvier","février","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","décembre");
 	messageDate = TabJour[jour] + " " + numero + " " + TabMois[month];
@@ -271,6 +270,9 @@ function makemenu(json){
 
 //btn retour sur la liste des resto qd on est ds le menu
 $(document).on('click','#btnBack', function(){ 
+	jour = today.getDay();
+	numero = today.getDate();
+	setdate();
 								initMenuAlpha();
 								html="";
 								$('#EmplacementItineraireTexte').html(html);	
@@ -283,7 +285,6 @@ $(document).on('click','#btnBack', function(){
 								$('#listebeta').hide();
 							});
 $(document).ready(function() {
-	
 	initMenuAlpha();
 	jour = today.getDay();
 	numero = today.getDate();
@@ -291,7 +292,7 @@ $(document).ready(function() {
 	$("#controle").hide();
 });
 
-$(document).on('click','#btnnext', function(){ 
+$("#btnnext").swipeleft(function() {
 	numero=numero+1;
 	jour=jour+1;
 	if(jour>5){
@@ -304,7 +305,7 @@ $(document).on('click','#btnnext', function(){
 
 });
 
-$(document).on('click','#btnlast', function(){ 
+$("#btnlast").swiperight(function() {
 	numero=numero-1;
 	jour=jour-1;
 	if(jour<1){
@@ -316,3 +317,4 @@ $(document).on('click','#btnlast', function(){
 	menu(m);
 
 });
+
