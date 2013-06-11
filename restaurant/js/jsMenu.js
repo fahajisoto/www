@@ -17,6 +17,7 @@ var Radresse;
 var Rcode_postal;
 var Rdescription;
 var nomResto;
+var day;
 
 function init_itineraire(lat,lan){
 	end = new google.maps.LatLng(lat,lan);
@@ -135,9 +136,9 @@ function makeList(json) {
 		if( nbelt > 0 ) {		
 			for(i=0; i<nbelt;i++){
 				html +="<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" " +
-						"data-iconshadow=\"true\" onclick=\"makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+")\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
+						"data-iconshadow=\"true\" onclick=\"makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+",'"+jsonResto[i].date+"')\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
 						"<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"
-						+ jsonResto[i].nom +"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
+						+ jsonResto[i].nom +"("+ jsonResto[i].etat +")"+"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
 			counter++;
 			}
 			
@@ -178,8 +179,14 @@ function initMenuAlpha() {
 
 function menu(iter) {
 	//recuperation du tableau des resto
+	var today = new Date(); 
+	var month= 1+today.getUTCMonth();
+	if (month>9)
+		day = today.getFullYear()+"-"+month+"-"+today.getDate();
+	else
+		day = today.getFullYear()+"-0"+month+"-"+today.getDate();
 	$.ajax({
-		url:"http://udamobile.u-clermont1.fr/v2/restaurant/?menu="+iter,
+		url:"http://udamobile.u-clermont1.fr/v2/restaurant/?menu="+iter+"&token=2a2a504c2d&date="+day,
 		type: "GET",
 		success: function(feedback) {
 			makemenu(feedback);		
@@ -193,26 +200,22 @@ function makemenu(json){
 	if(json!="")
 	{
 		var jsonMenu = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);
-		var MenuResto = jQuery.isPlainObject(jsonMenu) ? json: jQuery.parseJSON(jsonMenu);		
-		lat= jsonMenu.latitude;
-		//alert("here3:"+lat);
-		lon= jsonMenu.longitude;
-		var EntréesMidi= jsonMenu.menu.midi.Entrées;
-		var PlatsMidi= jsonMenu.menu.midi.Plats;
-		var LégumesMidi= jsonMenu.menu.midi.Légumes;
-		var DessertsMidi= jsonMenu.menu.midi.Desserts;
-		var EntréesSoir= jsonMenu.menu.soir.Entrées;
-		var PlatsSoir= jsonMenu.menu.soir.Plats;
-		var LégumesSoir= jsonMenu.menu.soir.Légumes;
-		var DessertsSoir= jsonMenu.menu.soir.Desserts;
-		var MidiSize = Object.keys(jsonMenu.menu.midi).length;
-		var SoirSize = Object.keys(jsonMenu.menu.soir).length;
-		var today = new Date(); 
-		var serveur= new Date(jsonMenu.date);
-		var day = today.getFullYear()+"-"+today.getUTCMonth()+"-"+today.getDate() ;
-		//var day = today.getFullYear()+"-"+today.getUTCMonth()+"-22" ;
-		var day2 = serveur.getFullYear()+"-"+serveur.getUTCMonth()+"-"+serveur.getDate();	
-			if(day == day2)
+		var MenuResto = jQuery.isPlainObject(jsonMenu) ? json: jQuery.parseJSON(jsonMenu);	
+		var MidiSize = Object.keys(jsonMenu.midi).length;
+		var SoirSize = Object.keys(jsonMenu.soir).length;
+		var EntréesMidi= jsonMenu.midi.Entrées;
+		var PlatsMidi= jsonMenu.midi.Plats;
+		var LégumesMidi= jsonMenu.midi.Légumes;
+		var DessertsMidi= jsonMenu.midi.Desserts;
+		if(SoirSize>0){
+		var EntréesSoir= jsonMenu.soir.Entrées;
+		var PlatsSoir= jsonMenu.soir.Plats;
+		var LégumesSoir= jsonMenu.soir.Légumes;
+		var DessertsSoir= jsonMenu.soir.Desserts;
+		}
+		var serveur= jsonMenu.date;
+		alert("serveur="+serveur+",today="+day);
+			if(day == serveur)
 			{
 				if(MidiSize>0)
 					html += "<li id=\"EntréesM\" class=\"midi\"><p><h4>Entrées:</h4>"+EntréesMidi+"</p></li><li id=\"PlatsM\" class=\"midi\"><p><h4>Plats:</h4>"+PlatsMidi+
@@ -230,7 +233,7 @@ function makemenu(json){
 			else {
 				alert("le menu n'a pas été envoyer!!!");		
 			}
-		//setEnd(lat,lon);
+		//setEnd(lat,lan);
 	
 	}
 	else {
@@ -249,11 +252,12 @@ function makemenu(json){
 /*
 function setEnd(lat,lon){
 	//alert("here in setEnd"+lat+"lon:"+lon);
-	end = new google.maps.LatLng(lat,lon);
+	end = new google.maps.LatLng(lat,lan);
 	alert("here5:"+lat);
 	//alert("end="+end);
 	$('#end').attr('value', end);
-}*/
+}
+*/
 //btn retour sur la liste des resto qd on est ds le menu
 $(document).on('click','#btnBack', function(){ 
 								initMenuAlpha();
