@@ -99,8 +99,8 @@ function initialize()
 		$('#page_footer').hide();
 		$("#listebeta").show();
 		$("#btnBack").show();
-
-		$("#controle").show();
+		$("#btnnext").show();
+		$("#btnlast").show();
 	   
 }
 
@@ -115,8 +115,8 @@ function selectchoice() {
 				$('#crous').hide();
 				$('#EmplacementItineraireTexte').hide();
 				$("#btnBack").show();
-				$("#controle").show();
-		
+				$("#btnnext").show();
+				$("#btnlast").show();		
 				$('#mode_affichage').hide();
 				break;
 			}
@@ -132,7 +132,8 @@ function selectchoice() {
 
 function btnhide(){
 	$("#btnBack").hide();
-	$("#controle").hide();
+	$("#btnnext").hide();
+	$("#btnlast").hide();
 	$("#mode").hide();
 	$("#Loading").hide();
 }
@@ -264,7 +265,8 @@ function makemenu(json){
 	$('#itineraire').show();
 	$("#mode").show();
 	$("#btnBack").show();
-	$("#controle").show();
+	$("#btnnext").show();
+	$("#btnlast").show();
 
 }
 
@@ -277,7 +279,8 @@ $(document).on('click','#btnBack', function(){
 								html="";
 								$('#EmplacementItineraireTexte').html(html);	
 								$("#btnBack").hide();
-								$("#controle").hide();
+								$("#btnnext").hide();
+								$("#btnlast").hide();
 								$("#itineraire").hide();	
 								$("#mode").hide();
 								$("#listeAlpha").show();
@@ -289,7 +292,8 @@ $(document).ready(function() {
 	jour = today.getDay();
 	numero = today.getDate();
 	setdate();
-	$("#controle").hide();
+	$("#btnnext").hide();
+	$("#btnlast").hide();
 });
 
 $(document).on('swipeleft','#btnnext', function() {
