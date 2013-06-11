@@ -625,7 +625,9 @@ td,th {
 	text-color: #fff;
 }
 
-
+#textmenu{
+	border: 0px !important;
+}
 
 #mapholder {
 	padding-top:11%;
@@ -656,7 +658,4 @@ td,th {
 	background: #000;
 	padding:1px !important;
 	margins: 1px !important;	
-}
-#textmenu{
-	border:none !important;
 }
