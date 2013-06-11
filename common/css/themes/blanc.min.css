@@ -565,7 +565,7 @@ body.loading .Loading {
 	height: 100%;
 }
 
-#mainPage {
+.mainPage {
 	background: #000;
 	margins: 0px;
 	padding: 0px;

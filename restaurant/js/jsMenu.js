@@ -91,21 +91,11 @@ function initialize()
                directionsDisplay.setDirections(response);
           }
      });
-		$('#listeAlpha').hide();
-		$('#page_footer').hide();
-		$("#listebeta").show();
-		$("#btnBack").show();
-		$("#btnnext").show();
-		$("#btnlast").show();
 	   
 }
 
 function btnhide(){
-	$("#btnBack").hide();
-	$("#btnnext").hide();
-	$("#btnlast").hide();
-	$("#mode").hide();
-	$("#Loading").hide();
+
 }
 //fonction qui met en place la liste des resto
 function makeList(json) {
@@ -116,7 +106,7 @@ function makeList(json) {
 		if( nbelt > 0 ) {		
 			for(i=0; i<nbelt;i++){
 				html +="<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" " +
-						"data-iconshadow=\"true\" onclick=\"makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+",'"+jsonResto[i].date+"')\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
+						"data-iconshadow=\"true\" onclick=\"window.location='#menupage';makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+",'"+jsonResto[i].date+"')\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
 						"<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a class=\"ui-link-inherit\" data-transition=\"slide\">"
 						+ jsonResto[i].nom +"("+ jsonResto[i].etat +")"+"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
 			}
@@ -143,9 +133,7 @@ function makeaddress(nom,address,code,desc,lat,lon){
 }
 // init la liste des resto par ordre alpha
 function initMenuAlpha() {
-	$('#itineraire').hide;
-	$('#mapholder').hide;
-	$('#EmplacementItineraireTexte').hide;
+
 	//recuperation du tableau des resto
 	$.ajax({
 		url:"http://udamobile.u-clermont1.fr/v2/restaurant/",
@@ -185,7 +173,6 @@ function menu(iter) {
 
 function makemenu(json){
 	html="";
-	$("#Rname").show();
 	$('#Rname').html("<h3>"+nomResto+"</h3>");
 	if(json!="")
 	{
@@ -231,13 +218,6 @@ function makemenu(json){
 	}
 	
 	$('#listebeta').html(html);	
-	$('#listeAlpha').hide();
-	$('#page_footer').hide();
-	$("#listebeta").show();
-	$('#itineraire').show();
-	$("#btnBack").show();
-	$("#btnnext").show();
-	$("#btnlast").show();
 
 }
 
@@ -249,20 +229,9 @@ $(document).on('click','#btnBack', function(){
 	initMenuAlpha();
 	html="";
 	$('#EmplacementItineraireTexte').html(html);
-	$('#listebeta').hide();
-	$("#btnBack").hide();
-	$("#btnnext").hide();
-	$("#btnlast").hide();
-	$("#Rname").hide();
-	$("#itineraire").hide();	
-	$("#listeAlpha").show();
-	$('#page_footer').show();
-
 });
 
 $(document).ready(function() {
-	$("#btnnext").hide();
-	$("#btnlast").hide();
 	initMenuAlpha();
 	jour = today.getDay();
 	numero = today.getDate();

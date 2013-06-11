@@ -16,7 +16,7 @@
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"> </script>	
 		<script type="text/javascript" src="js/jsMenu.js"></script>
 		<style>
-		#listebeta{
+		#listebeta li{
 		background-image: url('css/menu.jpg');
 		background-repeat: no-repeat;
 		color:#000;
@@ -53,7 +53,7 @@
 
 </head>	
 <body onload="btnhide()">
-	<div id="mainPage" data-role="page" data-theme="a">
+	<div id="mainPage" data-role="page" data-theme="a"class="mainPage">
 		<div data-role="header" id="uda_header" data-position="fixed">
 			<div data-role="navbar">
 				<ul>
@@ -65,23 +65,27 @@
 		<input id="end" type="hidden" value=""/>
 		<div id="header2">	
 			<h3>Liste des restaurants Universitaire:</h3>
-			<a id="btnBack" data-role="button" data-transition="slide" data-ajax="false">Les resto</a>
 		</div>
 		<div id="page_layout">
-			<!--
-			<div>
-				<select id="mode_affichage" onchange="selectchoice()">
-					<option value="tous">afficher tous les restaurants</option>
-					<option value="un">choisire un restaurant</option>
-				</select>
-				<img id="Loading" src="../icons/loading.gif"/>
+				<div id="pdate"></div>
+				<ul id="listeAlpha" data-role="listview"></ul>
+		</div>
+		<small id="page_footer">Source : CROUS Clermont-Ferrand</small>
+	</div>
+	
+	<div data-role="page" id="menupage" class="mainPage">
+			<div data-role="header" id="uda_header" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a data-role="button" ontouchstart="window.location='../main.html';" data-transition="slide" data-ajax="false"><img src="../icons/home.png" ></a>  </li>	
+					<li><a id="btnBack" data-role="button"  href="#mainPage" data-transition="slide" data-ajax="false"><img src="../icons/back_button.png" ></a></li>
+				</ul>
 			</div>
-			-->
-
-				
+		</div>	
+		<div id="page_layout">
+	
 				<div id="pdate"></div>
 				<div id="Rname"></div>
-				<ul id="listeAlpha" data-role="listview"></ul>
 				<table id="textmenu">
 				<tr>
 				<td id="btnlast" class="backicons" data-transition="slide" data-ajax="false"><img src="css/left.png"></img></td>
@@ -96,8 +100,7 @@
 		 		 <div id="mapholder"></div>
 		  		 <div id="EmplacementItineraireTexte"></div>					
 			</div>
-		</div>
-		<small id="page_footer">Source : CROUS Clermont-Ferrand</small>
+		</div>		
 	</div>
 </body>
 </html>
