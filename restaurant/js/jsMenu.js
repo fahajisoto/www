@@ -170,6 +170,7 @@ function makeaddress(nom,address,code,desc,lat,lon){
 	Rdescription=desc;
 	lat=lat;
 	lon=lon;
+	$('#address').html("<h4>adresse:"+Radresse+","+Rcode_postal+","+Rdescription+"</h4>");
 }
 // init la liste des resto par ordre alpha
 function initMenuAlpha() {
@@ -216,7 +217,7 @@ function menu(iter) {
 
 function makemenu(json){
 	html="";
-	$('#Rname').html("<li><h3>"+nomResto+"</h3></li>");
+	$('#Rname').html("<h3>"+nomResto+"</h3>");
 	if(json!="")
 	{
 		var jsonMenu = jQuery.isPlainObject(json) ? json: jQuery.parseJSON(json);
@@ -257,7 +258,7 @@ function makemenu(json){
 	else {
 		alert("le menu n'a pas été envoyer!!!");
 	}
-	html+="<li><h4>adresse:"+Radresse+","+Rcode_postal+","+Rdescription+"</h4></li>";
+	
 	$('#listebeta').html(html);	
 	$('#listeAlpha').hide();
 	$('#page_footer').hide();
