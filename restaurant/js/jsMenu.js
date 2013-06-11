@@ -185,6 +185,7 @@ function menu(iter) {
 
 function makemenu(json){
 	html="";
+	$("#Rname").show();
 	$('#Rname').html("<h3>"+nomResto+"</h3>");
 	if(json!="")
 	{
@@ -232,7 +233,6 @@ function makemenu(json){
 	$('#page_footer').hide();
 	$("#listebeta").show();
 	$('#itineraire').show();
-	$("#mode").show();
 	$("#btnBack").show();
 	$("#btnnext").show();
 	$("#btnlast").show();
@@ -251,8 +251,8 @@ $(document).on('click','#btnBack', function(){
 	$("#btnBack").hide();
 	$("#btnnext").hide();
 	$("#btnlast").hide();
+	$("#Rname").hide();
 	$("#itineraire").hide();	
-	$("#mode").hide();
 	$("#listeAlpha").show();
 	$('#page_footer').show();
 
