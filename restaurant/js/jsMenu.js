@@ -207,15 +207,17 @@ function makemenu(json){
 			if(day == serveur)
 			{
 				if(MidiSize>0)
-					html += "<li id=\"EntréesM\" class=\"midi\"><p><h4>Entrées:</h4>"+EntréesMidi+"</p></li><li id=\"PlatsM\" class=\"midi\"><p><h4>Plats:</h4>"+PlatsMidi+
-					"</p></li><li id=\"LégumesM\" class =\"midi\"data-theme=\"b\"><p><h4>Légumes:</h4>"+ LégumesMidi+
-					"</p></li>	<li id=\"DessertsM\" class = \"midi\" data-theme=\"b\"><p><h4>Desserts:</h4>"+DessertsMidi+" </p></li>";
+					html += "<li id=\"EntréesM\"><img src=\"css/entree.png\" class=\"icons\"></img><h4>Entrées:</h4>"+EntréesMidi+"</li>" +
+							"<li id=\"PlatsM\"><img src=\"css/repas.png\" class=\"icons\"></img><h4>Plats:</h4>"+PlatsMidi+"</li>" +
+							"<li id=\"LégumesM\"><img src=\"css/legume.png\" class=\"icons\"></img><h4>Légumes:</h4>"+ LégumesMidi+"</li>" +
+							"<li id=\"DessertsM\"><img src=\"css/dess.png\" class=\"icons\"></img><h4>Desserts:</h4>"+DessertsMidi+"</li>";
 				else 
-					html += "<li><p class=\"midi\"><span style='text-decoration:underline' >Midi</span> : Pas de service</p></li>";
+					html += "<li><p><span style='text-decoration:underline' >Midi</span> : Pas de service</p></li>";
 				if(SoirSize>0)
-					html +="<li  id=\"EntréesSoir\" class =\"soir\"><p><h4>Entrées:</h4>"+EntréesSoir+" </p></li><li id=\"Plats\" class =\"soir\"><p><h4>Plats:</h4>"+PlatsSoir+
-					"</p></li><li id=\"Légumes\" class =\"soir\"><p><h4>Légumes:</h4>" +LégumesSoir+"</p></li><li id=\"Desserts\" class = \"soir\"><p><h4>Desserts:</h4>"+DessertsSoir+
-					" </p></li>";
+					html +="<li  id=\"EntréesSoir\"><p><h4>Entrées:</h4>"+EntréesSoir+" </p></li>" +
+							"<li id=\"Plats\"><p><h4>Plats:</h4>"+PlatsSoir+"</p></li>" +
+							"<li id=\"Légumes\"><p><h4>Légumes:</h4>" +LégumesSoir+"</p></li>" +
+							"<li id=\"Desserts\"><p><h4>Desserts:</h4>"+DessertsSoir+"</p></li>";
 				else 
 					html += "<li><p class=\"soir\"><span style='text-decoration:underline' ><h4>Soir</span> : Pas de service</h4></p></li>";
 			}

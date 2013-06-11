@@ -16,6 +16,9 @@
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=true&amp;libraries=places"> </script>	
 		<script type="text/javascript" src="js/jsMenu.js"></script>
 		<style>
+			.icons{
+			float:left;
+			}
 			#mapholder {
 				padding-bottom:2px;
 				margin-top:1px;
@@ -76,11 +79,11 @@
 				<ul id="listeAlpha" data-role="listview"></ul>
 				<table id="textmenu">
 				<tr>
-				<td id="btnlast" data-transition="slide" data-ajax="false">  </td>
+				<td id="btnlast" class="backicons" data-transition="slide" data-ajax="false"><img src="css/left.png"></img></td>
 				<td>	
-					<ul id="listebeta"  data-role="listview" data-inset="true"></ul>
+					<ul id="listebeta" data-role="listview" data-inset="true"></ul>
 				</td>
-				<td id="btnnext" data-transition="slide" data-ajax="false">  </td>
+				<td id="btnnext" class="backicons" data-transition="slide" data-ajax="false"><img src="css/right.png"></img></td>
 				</tr>
 				</table>
 				<div id="address"></div>
