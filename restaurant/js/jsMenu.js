@@ -18,6 +18,7 @@ var today = new Date();
 var m;
 var numero=today.getDate();
 var jour;
+var month;
 
 function init_itineraire(lat,lan){
 	end = new google.maps.LatLng(lat,lan);
@@ -106,7 +107,7 @@ function makeList(json) {
 		if( nbelt > 0 ) {		
 			for(i=0; i<nbelt;i++){
 				html +="<li class=\"ui-btn ui-btn-up-a ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child\" data-corners=\"false\" data-shadow=\"false\" " +
-						"data-iconshadow=\"true\" onclick=\"makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+",'"+jsonResto[i].date+"')\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
+						"data-iconshadow=\"true\" onclick=\"setdate();makeaddress('"+escape(jsonResto[i].nom)+"','"+escape(jsonResto[i].adresse)+"','"+jsonResto[i].code_postal+"','"+jsonResto[i].description+"','"+jsonResto[i].latitude+"','"+jsonResto[i].longitude+"');init_itineraire("+jsonResto[i].latitude+","+jsonResto[i].longitude+");menu("+i+",'"+jsonResto[i].date+"')\" " +"data-wrapperels=\"div\" data-icon=\"arrow-r\" data-iconpos=\"right\">" +
 						"<div class=\"ui-btn-inner ui-li\"><div class=\"ui-btn-text\"><a href=\"#menupage\" class=\"ui-link-inherit\" data-transition=\"slide\">"
 						+ jsonResto[i].nom +"("+ jsonResto[i].etat +")"+"</a></div><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\"> </span></div></li>";
 			}
@@ -145,8 +146,7 @@ function initMenuAlpha() {
 }
 
 function setdate(){
-	
-	var month= today.getMonth();
+	month= today.getMonth();	
 	TabJour = new Array("Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi");
 	TabMois = new Array("janvier","février","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","décembre");
 	messageDate = TabJour[jour] + " " + numero + " " + TabMois[month];
@@ -156,7 +156,6 @@ function setdate(){
 		day = today.getFullYear()+"-"+month+"-"+numero;
 	else
 		day = today.getFullYear()+"-0"+month+"-"+numero;
-
 }
 
 function menu(iter) {
@@ -225,8 +224,6 @@ function makemenu(json){
 $(document).on('click','#btnBack', function(){ 
 	jour = today.getDay();
 	numero = today.getDate();
-	setdate();
-	initMenuAlpha();
 	html="";
 	$('#EmplacementItineraireTexte').html(html);
 });
