@@ -19,6 +19,7 @@ var m;
 var numero=today.getDate();
 var jour;
 var month;
+var counter=0;
 
 function init_itineraire(lat,lan){
 	end = new google.maps.LatLng(lat,lan);
@@ -156,6 +157,7 @@ function setdate(){
 		day = today.getFullYear()+"-"+month+"-"+numero;
 	else
 		day = today.getFullYear()+"-0"+month+"-"+numero;
+	
 }
 
 function menu(iter) {
@@ -165,7 +167,7 @@ function menu(iter) {
 		url:"http://udamobile.u-clermont1.fr/v2/restaurant/?menu="+m+"&token=2a2a504c2d&date="+day,
 		type: "GET",
 		success: function(feedback) {
-			makemenu(feedback);		
+			makemenu(feedback);
 		},
 	});
 }
@@ -190,6 +192,7 @@ function makemenu(json){
 		var DessertsSoir= jsonMenu.soir.Desserts;
 		}
 		var serveur= jsonMenu.date;
+		
 			if(day == serveur)
 			{
 				if(MidiSize>0)
@@ -200,7 +203,8 @@ function makemenu(json){
 				else 
 					html += "<li><p><span style='text-decoration:underline' >Midi</span> : Pas de service</p></li>";
 				if(SoirSize>0)
-					html +="<li  id=\"EntréesSoir\"><p><h4>Entrées:</h4>"+EntréesSoir+" </p></li>" +
+					html+="<li><img src=\"css/soir.png\" class=\"icons\"></img><h3>menu du soir:</h3></li>"+
+							"<li  id=\"EntréesSoir\"><p><h4>Entrées:</h4>"+EntréesSoir+" </p></li>" +
 							"<li id=\"Plats\"><p><h4>Plats:</h4>"+PlatsSoir+"</p></li>" +
 							"<li id=\"Légumes\"><p><h4>Légumes:</h4>" +LégumesSoir+"</p></li>" +
 							"<li id=\"Desserts\"><p><h4>Desserts:</h4>"+DessertsSoir+"</p></li>";
@@ -216,7 +220,18 @@ function makemenu(json){
 		alert("le menu n'a pas été envoyer!!!");
 	}
 	
-	$('#listebeta').html(html);	
+	if(jour==1)
+		$('#lundi').html(html);	
+	if(jour==2)
+		$('#mardi').html(html);	
+	if(jour==3)
+		$('#mercredi').html(html);	
+	if(jour==4)
+		$('#jeudi').html(html);	
+	if(jour==5)
+		$('#vendredi').html(html);	
+	if(jour==6 || jour==0)
+		alert
 
 }
 
@@ -232,33 +247,118 @@ $(document).ready(function() {
 	initMenuAlpha();
 	jour = today.getDay();
 	numero = today.getDate();
+	if(jour==6 || jour==0)
+
 	setdate();
 });
 
-$(document).on('swipeleft','#btnnext', function() {
-	numero=numero+1;
-	jour=jour+1;
-	if(jour>5){
-		alert("pas acess au menu des week-end");
-		jour=1;
-		numero=numero+2;
-	}
-	setdate();
-	menu(m);
+$(document).on('click','#blundi', function() {
+	counter=0;
+		while(jour!=1){
+			if(jour>1){
+				counter=counter+1;
+				jour=jour-1;
+			}
+			else{
+				counter=counter-1;
+				jour=jour+1;
+			}
+		}
+		numero=numero-counter;		
+		setdate();
+		menu(m);
+	$("#mardi").slideUp("slow");
+	$("#mercredi").slideUp("slow");
+	$("#jeudi").slideUp("slow");
+	$("#vendredi").slideUp("slow");
+	$("#lundi").slideDown("slow");
+	
+  });
 
-} );
+$(document).on('click','#bmardi', function() {
+	counter=0;
+		while(jour!=2){
+			if(jour>2){
+				counter=counter+1;
+				jour=jour-1;
+			}
+			else{
+				counter=counter-1;
+				jour=jour+1;
+			}
+		}
+		numero=numero-counter;		
+		setdate();
+		menu(m);
+		$("#lundi").slideUp("slow");
+		$("#mercredi").slideUp("slow");
+		$("#jeudi").slideUp("slow");
+		$("#vendredi").slideUp("slow");
+		$("#mardi").slideDown("slow");
+  });
+$(document).on('click','#bmercredi', function() {
+	counter=0;
+		while(jour!=3){
+			if(jour>3){
+				counter=counter+1;
+				jour=jour-1;
+			}
+			else{
+				counter=counter-1;
+				jour=jour+1;
+			}
+		}
+		numero=numero-counter;		
+		setdate();
+		menu(m);
+		$("#mardi").slideUp("slow");
+		$("#lundi").slideUp("slow");
+		$("#jeudi").slideUp("slow");
+		$("#vendredi").slideUp("slow");
+		$("#mercredi").slideDown("slow");
+  });
+$(document).on('click','#bjeudi', function() {
+	counter=0;
+		while(jour!=4){
+			if(jour>4){
+				counter=counter+1;
+				jour=jour-1;
+			}
+			else{
+				counter=counter-1;
+				jour=jour+1;
+			}
+		}
+		numero=numero-counter;		
+		setdate();
+		menu(m);
+		$("#mardi").slideUp("slow");
+		$("#lundi").slideUp("slow");
+		$("#mercredi").slideUp("slow");
+		$("#vendredi").slideUp("slow");
+		$("#jeudi").slideDown("slow");
+  });
+$(document).on('click','#bvendredi', function() {
+	counter=0;
+		while(jour!=5){
+			if(jour>5){
+				counter=counter+1;
+				jour=jour-1;
+			}
+			else{
+				counter=counter-1;
+				jour=jour+1;
+			}
+		}
+		numero=numero-counter;		
+		setdate();
+		menu(m);
+		$("#mardi").slideUp("slow");
+		$("#lundi").slideUp("slow");
+		$("#jeudi").slideUp("slow");
+		$("#mercredi").slideUp("slow");
+		$("#vendredi").slideDown("slow");
+  });
 
 
-$(document).on('swiperight','#btnlast', function() {
-	numero=numero-1;
-	jour=jour-1;
-	if(jour<1){
-		alert("pas acess au menu des week-end");
-		numero=numero-2;
-		jour=5;
-	}
-	setdate();
-	menu(m);
-
-});
 

@@ -612,7 +612,7 @@ body.loading .Loading {
 table{
 		width: 100%;
 		text-align: center;
-		text-color: #fff;
+		text-color: #fff !important;
 		border-collapse: collapse;
 }
 
