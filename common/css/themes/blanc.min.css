@@ -510,6 +510,7 @@ a.ui-link-inherit {
 @media print {
 	html,body {
 		height: auto;
+	
 	}
 
 }
@@ -528,6 +529,7 @@ html,body {
 	height: 100% !important;
 	padding: 0;
 	margin: 0;
+	background-color: #000;
 }
 
 body.loading .Loading {
@@ -566,7 +568,7 @@ body.loading .Loading {
 }
 
 .mainPage {
-	background: #000;
+	background: #000 !important;
 	margins: 0px;
 	padding: 0px;
 	text-align: center;
@@ -575,7 +577,7 @@ body.loading .Loading {
 }
 
 #maintable {
-
+	border-collapse: collapse;
 	margin-top: 0 !important;
 	padding: 0 !important;
 	text-align: center;
@@ -606,12 +608,6 @@ body.loading .Loading {
 	padding: 0px;
 }
 
-
-#maintable {
-	width: 100%;
-	height: 100%;
-	border-collapse: collapse;
-}
 
 table{
 		width: 100%;
