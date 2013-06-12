@@ -80,7 +80,7 @@ function initialize()
      }
      map = new google.maps.Map(document.getElementById("mapholder"), optionsCarte);
      directionsDisplay.setMap(map);
-     directionsDisplay.setPanel(document.getElementById("EmplacementItineraireTexte"));
+     directionsDisplay.setPanel(document.getElementById("addressText"));
      var requeteItineraire = {
           origin: address,
           destination: end,
@@ -225,7 +225,7 @@ $(document).on('click','#btnBack', function(){
 	jour = today.getDay();
 	numero = today.getDate();
 	html="";
-	$('#EmplacementItineraireTexte').html(html);
+	$('#addressText').html(html);
 });
 
 $(document).ready(function() {

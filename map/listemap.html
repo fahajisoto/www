@@ -53,7 +53,7 @@
 				<div data-role="navbar">
 					<ul>
 						<li><a id="homepage" data-role="button"  ontouchstart="window.location='../main.html';" data-transition="reverse" data-ajax="false"><img src="../icons/home.png" ></a> </li>
-						<li><a id="backButton" data-role="button"  ontouchstart="window.location='map.html';" data-transition="reverse" data-ajax="false"><img src="../icons/back_button.png" ></a>	</li>
+						<li><a id="backButton" data-role="button"  onclick="window.location='map.html';" data-transition="reverse" data-ajax="false"><img src="../icons/back_button.png" ></a>	</li>
 					</ul>
 					
 				</div>
@@ -63,13 +63,13 @@
 					<h3>Liste des batiments universitaire:</h3>
 					</div>
 				<ul id="listbuildings"  data-role="listview">
-					<li><a id="universite"  ontouchstart="listbuildings('universite')" data-transition="slide">universite</a></li>
-					<li><a id="sante"  ontouchstart="listbuildings('sante')" data-transition="slide">sante</a></li>
-					<li><a id="loisir"  ontouchstart="listbuildings('loisir')" data-transition="slide">loisir</a></li>
-					<li><a id="BU"  ontouchstart="listbuildings('BU')" data-transition="slide">BU</a></li>
-					<li><a id="resto" ontouchstart="listbuildings('resto')" data-transition="slide">resto</a></li>
-					<li><a id="heberg"  ontouchstart="listbuildings('heberg')" data-transition="slide">heberg</a></li>
-					<li><a id="divers" ontouchstart="listbuildings('divers')" data-transition="slide">divers</a></li>
+					<li><a id="universite"  onclick="listbuildings('universite')" data-transition="slide">universite</a></li>
+					<li><a id="sante"  onclick="listbuildings('sante')" data-transition="slide">sante</a></li>
+					<li><a id="loisir"  onclick="listbuildings('loisir')" data-transition="slide">loisir</a></li>
+					<li><a id="BU"  onclick="listbuildings('BU')" data-transition="slide">BU</a></li>
+					<li><a id="resto" onclick="listbuildings('resto')" data-transition="slide">resto</a></li>
+					<li><a id="heberg"  onclick="listbuildings('heberg')" data-transition="slide">heberg</a></li>
+					<li><a id="divers" onclick="listbuildings('divers')" data-transition="slide">divers</a></li>
 				</ul>
 				<ul id="newlist"  data-role="listview"></ul>
 			
